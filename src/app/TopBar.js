@@ -34,7 +34,7 @@ function TopBar() {
                     SMB Guesser Stats
                 </DialogTitle>
                 <DialogContent>
-                    <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', textAlign: 'center' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '10px' }}>
                             <Typography variant="h5">
                                 38

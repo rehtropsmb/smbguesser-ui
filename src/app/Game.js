@@ -1,6 +1,5 @@
 import { Typography, Box, Button, Input, Paper } from "@mui/material";
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import Results from "./Results";
 import ImageDisplay from "./ImageDisplay";
 import TimeRemaining from "./TimeRemaining";
@@ -15,15 +14,15 @@ function Game({ number }) {
 
     const [gameState, setGameState] = useState('PLAYING');
 
-    const handleSkip = () => {
-        // result.push({ score: 4 });
-        // setResult(result);
-        // localStorage.setItem('guesserResults', JSON.stringify([]));
-    };
+    // const handleSkip = () => {
+    //     // result.push({ score: 4 });
+    //     // setResult(result);
+    //     // localStorage.setItem('guesserResults', JSON.stringify([]));
+    // };
 
-    const handleSubmit = () => {
-        // console.log(localStorage.getItem('guesserResults'));
-    }
+    // const handleSubmit = () => {
+    //     // console.log(localStorage.getItem('guesserResults'));
+    // }
     
     const handleEnterKey = (event) => {
         if (event.key === 'Enter') {
