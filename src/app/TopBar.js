@@ -4,6 +4,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from "react";
 import InfoDialog from "./InfoDialog";
+import { BarChart } from "@mui/x-charts";
 
 function TopBar() {
     const [infoDialogOpen, setInfoDialogOpen] = useState(false);
@@ -32,6 +33,9 @@ function TopBar() {
                 </DialogTitle>
                 <DialogContent>
                     heres ur stats
+                    <BarChart
+                        layout="horizontal"
+                    />
                 </DialogContent>
                 <DialogActions>
                     <Button variant="contained" onClick={() => setLeaderboardDialogOpen(false)}>
