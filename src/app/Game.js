@@ -5,6 +5,7 @@ import ImageDisplay from "./ImageDisplay";
 import TimeRemaining from "./TimeRemaining";
 import stages from "../data/stages";
 import TopBar from "./TopBar";
+import { fuzzy } from "fast-fuzzy";
 
 function Game() {
 
@@ -61,7 +62,7 @@ function Game() {
     }, []);
 
     const getPuzzleNumber = () => {
-        const startDate = new Date('2024-09-21T00:00:00-04:00'); // Midnight ET on 9/21/2024
+        const startDate = new Date('2024-09-20T00:00:00-04:00'); // Midnight ET on 9/21/2024
         const now = new Date();
         const currentDate = new Date(
           now.toLocaleString('en-US', { timeZone: 'America/New_York' })
@@ -133,12 +134,13 @@ function Game() {
     });
 
     const addGuess = (guess = '') => {
-        console.log(guesses)
         const value = guess ? guess : 'Skipped!';
         setGuesses(prev => {
             const currGuesses = [...prev, { num: prev.length + 1, value }];
             // did player win the game?
-            if (guess.toLowerCase() === stage.name.toLowerCase()) {
+            const similarity = fuzzy(stage.name.toLowerCase(), guess.toLowerCase());
+            console.log('similarity', similarity);
+            if (similarity > 0.85) {
                 setGameState('WON');
                 const result = {
                     puzzle: puzzle,

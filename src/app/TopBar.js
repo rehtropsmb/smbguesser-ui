@@ -1,7 +1,7 @@
 import { Typography, Button, Box, IconButton, Dialog, DialogContent, DialogActions } from "@mui/material";
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import InfoIcon from '@mui/icons-material/Info';
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import InfoDialog from "./InfoDialog";
 import { BarChart } from '@mui/x-charts';
 
@@ -39,6 +39,30 @@ function TopBar({ gameHistory }) {
     const won = gameHistory.filter(p => p.state === 'W').length;
     const winrate = played !== 0 ? Math.floor((won / played) * 100) : 0;
 
+    const maxStreak = useMemo(() => {
+        if (gameHistory.length < 1) { return 0; }
+        let currentStreak = 0;
+        let longestStreak = 0;
+        let currPuzzle = gameHistory[0].puzzle;
+
+        for (let i = 0; i < gameHistory.length; i++) {
+            if (currentStreak === 0) {
+                currPuzzle = gameHistory[i].puzzle;
+            }
+            if (gameHistory[i].state === 'W' && gameHistory[i].puzzle === currPuzzle) {
+                currentStreak++;
+                if (currentStreak > longestStreak) {
+                    longestStreak = currentStreak;
+                }
+                currPuzzle++;
+            } else {
+                currentStreak = 0;
+            }
+        }
+
+        return longestStreak;
+    }, [gameHistory]);
+
     const calculateCurrentStreak = () => {
         if (gameHistory.length < 1) { return 0; }
         let streak = 0;
@@ -53,7 +77,6 @@ function TopBar({ gameHistory }) {
         return streak;
     };
     const streak = calculateCurrentStreak();
-    const maxStreak = streak;
 
     const data = [
         gameHistory.filter(p => (p.state === 'W' && p.score === 1)).length,
@@ -106,7 +129,7 @@ function TopBar({ gameHistory }) {
                                 { winrate }%
                             </Typography>
                             <Typography variant="caption">
-                                Win %
+                                Win Rate
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '10px' }}>
