@@ -1,7 +1,7 @@
 import { Typography, Box, Button } from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-function Results({ gameState, onCopyClick }) {
+function Results({ gameState, onCopyClick, stage }) {
 
     if (gameState === "PLAYING") {
         return null;
@@ -9,7 +9,7 @@ function Results({ gameState, onCopyClick }) {
 
     const getWon = () => {
         return (
-            <Typography variant="h4">
+            <Typography variant="h5">
                 Congrats!
             </Typography>
         );
@@ -17,7 +17,7 @@ function Results({ gameState, onCopyClick }) {
 
     const getLost = () => {
         return (
-            <Typography variant="h4">
+            <Typography variant="h5">
                 Better luck next time!
             </Typography>
         );
@@ -30,12 +30,15 @@ function Results({ gameState, onCopyClick }) {
         <Box>
             { gameState === "WON" && won }
             { gameState === "LOST" && lost }
+            <Typography variant="body1">
+                The answer was: 
+            </Typography>
             <Typography variant="h5">
-                The answer was: Entangled Path
+            {stage.slot} {stage.name} from {stage.pack}
             </Typography>
             <Button variant="contained" onClick={onCopyClick}>
                 Share Results
-                <ContentCopyIcon/>
+                <ContentCopyIcon sx={{ marginLeft: '5px'}}/>
             </Button>
         </Box>
     );

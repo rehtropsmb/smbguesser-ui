@@ -15,8 +15,11 @@ function TimeRemaining() {
 
     function getTimeToMidnight() {
         const now = new Date();
+        const easternTime = new Date(
+          now.toLocaleString('en-US', { timeZone: 'America/New_York' })
+        );
         const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
-        const diff = midnight - now;
+        const diff = midnight - easternTime;
         return diff;
     }
 
@@ -30,7 +33,7 @@ function TimeRemaining() {
     };
 
     return (
-        <Box sx={{ margin: '20px'}}>
+        <Box sx={{ margin: '20px', marginTop: 'auto' }}>
             <Typography variant="h6">
                 Next Game In
             </Typography>
