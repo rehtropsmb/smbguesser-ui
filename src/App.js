@@ -1,6 +1,8 @@
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import Game from './app/Game';
 import stages from "./data/stages";
+import TimeRemaining from './app/TimeRemaining';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 const style = {
     textAlign: 'center',
@@ -15,7 +17,7 @@ const style = {
 
 function App() {
     const getPuzzleNumber = () => {
-        const startDate = new Date('2024-09-23T00:00:00-04:00'); // Midnight ET on 9/22/2024
+        const startDate = new Date('2024-09-24T00:00:00-04:00'); // Midnight ET on 9/24/2024
         const now = new Date();
         
         const diff = now - startDate;
@@ -30,7 +32,23 @@ function App() {
     return (
         <div style={style}>
             { stage.name && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
-            { !stage.name && <Typography variant="h4" sx={{ margin: '10px'}}>SMB Guesser has ran out of prepared stages :(</Typography>}
+            { !stage.name && (
+                <>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
+                        <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '8px', font: 'Gabarito' }}>
+                            SMB Guesser
+                        </Typography>
+                    </Box>
+                    {/* <Typography variant="body1">No stage prepared for day #{puzzleNumber}.</Typography>
+                    <Typography variant="body1">Thanks so much for enjoying my game!</Typography>
+                    <Typography variant="body1">Please send me a Discord message if you'd like to see the game continue.</Typography>
+                    <Typography variant="body1">- rehtrop</Typography> */}
+                    <Typography variant="body1">It's almost here :D</Typography>
+                    <Typography variant="body1">- rehtrop</Typography>
+                    <TimeRemaining/>
+                </>
+            )}
         </div>
     );
 };

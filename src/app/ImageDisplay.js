@@ -4,9 +4,17 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 
 function ImageDisplay({ currentGuess, gameState, handleSkip, puzzle }) {
 
-    const [selectedImage, setSelectedImage] = useState(1);
+    const [selectedImage, setSelectedImage] = useState(currentGuess);
 
-    const imageUrl = gameState !== 'LOADING' ? `/images/st${puzzle}/${selectedImage}.webp` : ``;
+    const imageUrls = [
+        `/images/st${puzzle}/1.webp`,
+        `/images/st${puzzle}/2.webp`,
+        `/images/st${puzzle}/3.webp`,
+        `/images/st${puzzle}/4.webp`,
+        `/images/st${puzzle}/5.webp`,
+    ];
+
+    const isNotLoading = gameState !== 'LOADING';
 
     const numberedButtons = [1, 2, 3, 4, 5].map(n => {
         const color = gameState === 'WON' ? '#468966' : '#803D3B';
@@ -31,12 +39,46 @@ function ImageDisplay({ currentGuess, gameState, handleSkip, puzzle }) {
 
     return (
         <>
-            <Box 
-                component="img"
-                src={imageUrl}
-                alt="Loading..."
-                sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
-            />
+            { selectedImage === 1 && (
+                <Box 
+                    component="img"
+                    src={isNotLoading ? imageUrls[0] : ''}
+                    alt="Loading..."
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                />
+            )}
+            { selectedImage === 2 && (
+                <Box 
+                    component="img"
+                    src={isNotLoading ? imageUrls[1] : ''}
+                    alt="Loading..."
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                />
+            )}
+            { selectedImage === 3 && (
+                <Box 
+                    component="img"
+                    src={isNotLoading ? imageUrls[2] : ''}
+                    alt="Loading..."
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                />
+            )}
+            { selectedImage === 4 && (
+                <Box 
+                    component="img"
+                    src={isNotLoading ? imageUrls[3] : ''}
+                    alt="Loading..."
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                />
+            )}
+            { selectedImage === 5 && (
+                <Box 
+                    component="img"
+                    src={isNotLoading ? imageUrls[4] : ''}
+                    alt="Loading..."
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                />
+            )}
             <Box>
                 { numberedButtons }
                 <Button key="skip" variant="contained" disabled={gameState !== "PLAYING"} onClick={() => handleSkip()} sx={{ margin: '5px', backgroundColor: '#FFB03B', width: '105px' }}>

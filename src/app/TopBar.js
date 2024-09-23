@@ -38,7 +38,7 @@ function TopBar({ gameHistory }) {
         return longestStreak;
     }, [gameHistory]);
 
-    const calculateCurrentStreak = () => {
+    const streak = useMemo(() => {
         if (gameHistory.length < 1) { return 0; }
         let streak = 0;
         let currPuzzle = gameHistory[gameHistory.length - 1].puzzle;
@@ -50,8 +50,7 @@ function TopBar({ gameHistory }) {
             currPuzzle--;
         }
         return streak;
-    };
-    const streak = calculateCurrentStreak();
+    }, [gameHistory]);
 
     const data = [
         gameHistory.filter(p => (p.state === 'W' && p.score === 1)).length,
@@ -66,10 +65,10 @@ function TopBar({ gameHistory }) {
         <>
             <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
                 <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '10px', font: 'Gabarito' }}>
+                <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '8px', font: 'Gabarito' }}>
                     SMB Guesser
                 </Typography>
-                <IconButton onClick={() => setLeaderboardDialogOpen(true)} sx={{ marginLeft: '30px' }}>
+                <IconButton onClick={() => setLeaderboardDialogOpen(true)} sx={{ marginLeft: '0px' }}>
                     <LeaderboardIcon sx={{ color: '#603F26' }}/>
                 </IconButton>
                 <IconButton onClick={() => setInfoDialogOpen(true)}>

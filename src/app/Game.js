@@ -1,11 +1,12 @@
 import { Typography, Box, Button, Paper, Autocomplete, TextField } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Results from "./Results";
 import ImageDisplay from "./ImageDisplay";
 import TimeRemaining from "./TimeRemaining";
 import TopBar from "./TopBar";
 import didYouMean, { ReturnTypeEnums } from "didyoumean2";
 import stagenames from "../data/stagenames";
+import ConfettiExplosion from "react-confetti-explosion";
 
 function Game({ puzzleNumber, stage }) {
 
@@ -16,7 +17,7 @@ function Game({ puzzleNumber, stage }) {
     const [gameHistory, setGameHistory] = useState(() => {
         const saved = localStorage.getItem("gameHistory");
         const parsed = JSON.parse(saved);
-        return parsed ?? [];
+        return parsed ?? {};
     });
 
     const [gameToday, setGameToday] = useState(() => {
@@ -24,6 +25,9 @@ function Game({ puzzleNumber, stage }) {
         const parsed = JSON.parse(saved);
         return parsed ?? null;
     });
+
+    const [confetti, setConfetti] = useState(false);
+
     useEffect(() => {
         setGameToday(prev => {
             const updated = {
@@ -43,6 +47,12 @@ function Game({ puzzleNumber, stage }) {
         if (gameToday && puzzleNumber === gameToday.puzzle) {
             setGuesses(gameToday.guesses);
             setGameState(gameToday.gameState);
+            if (gameToday.gameState === "WON") {
+                setConfetti(true);
+                setTimeout(() => {
+                    setConfetti(false)
+                }, 3_500);
+            }
         } else {
             setGameToday({
                 puzzle: puzzleNumber,
@@ -54,10 +64,6 @@ function Game({ puzzleNumber, stage }) {
         // Only run once on initial mount
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    useEffect(() => {
-
-    }, )
     
     const handleEnterKey = (event) => {
         if (event.key === 'Enter') {
@@ -97,12 +103,16 @@ function Game({ puzzleNumber, stage }) {
             // did player win the game?
             if (stage.name.toLowerCase() === guess.toLowerCase()) {
                 setGameState('WON');
+                setConfetti(true);
                 const result = {
                     puzzle: puzzleNumber,
                     score: currGuesses.length,
                     state: 'W',
                 };
-                const history = [...gameHistory, result];
+                const history = {
+                    ...gameHistory
+                };
+                history[puzzleNumber] = result;
                 localStorage.setItem("gameHistory", JSON.stringify(history));
                 setGameHistory(history);
             } else if (currGuesses.length >= 5) {
@@ -110,10 +120,13 @@ function Game({ puzzleNumber, stage }) {
                 setGameState('LOST');
                 const result = {
                     puzzle: puzzleNumber,
-                    score: guesses.length,
+                    score: currGuesses.length,
                     state: 'L',
                 };
-                const history = [...gameHistory, result];
+                const history = {
+                    ...gameHistory
+                };
+                history[puzzleNumber] = result;
                 localStorage.setItem("gameHistory", JSON.stringify(history));
                 setGameHistory(history);
             }
@@ -164,9 +177,18 @@ function Game({ puzzleNumber, stage }) {
         return `SMB Guesser #${puzzleNumber}\n${emoji} ${score}\nhttps://smbguesser.com`;
     }
 
+    const gameHistoryArray = useMemo(() => {
+        return Object.values(gameHistory).sort((a, b) => (a.puzzle - b.puzzle));
+    }, [gameHistory]);
+
     return (
         <>
-            <TopBar gameHistory={gameHistory}/>
+            {confetti && <ConfettiExplosion
+                particleCount={200}
+                duration={3000}
+                width={1500}
+            />}
+            <TopBar gameHistory={gameHistoryArray}/>
             <Typography>Stage #{puzzleNumber}</Typography>
             <ImageDisplay currentGuess={guesses.length + 1} gameState={gameState} handleSkip={() => addGuess()} puzzle={puzzleNumber}/>
             { gameState === "PLAYING" && input }
