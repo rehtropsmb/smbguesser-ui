@@ -9,9 +9,8 @@ const style = {
     flexDirection: 'column',
     alignItems: 'center',
     fontSize: 'calc(10px + 2vmin)',
-    color: 'black',
-    // justifyContent: 'center'
-}
+    color: 'black'
+};
 
 function App() {
     const getPuzzleNumber = () => {
@@ -34,6 +33,6 @@ function App() {
             <Game puzzleNumber={puzzleNumber} stage={stage}/>
         </div>
     );
-}
+};
 
 export default App;
