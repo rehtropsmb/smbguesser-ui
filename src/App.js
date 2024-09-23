@@ -15,12 +15,10 @@ const style = {
 
 function App() {
     const getPuzzleNumber = () => {
-        const startDate = new Date('2024-09-22T00:00:00-04:00'); // Midnight ET on 9/22/2024
+        const startDate = new Date('2024-09-23T00:00:00-04:00'); // Midnight ET on 9/22/2024
         const now = new Date();
-        const currentDate = new Date(
-          now.toLocaleString('en-US', { timeZone: 'America/New_York' })
-        );
-        const diff = currentDate - startDate;
+        
+        const diff = now - startDate;
         const day = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
 
         return day;

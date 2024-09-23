@@ -15,11 +15,9 @@ function TimeRemaining() {
 
     function getTimeToMidnight() {
         const now = new Date();
-        const easternTime = new Date(
-          now.toLocaleString('en-US', { timeZone: 'America/New_York' })
-        );
-        const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
-        const diff = midnight - easternTime;
+        const date = now.getUTCHours() < 4 ? now.getUTCDate() : now.getUTCDate() + 1;
+        const midnight = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), date, 4, 0, 0));
+        const diff = midnight - now;
         return diff;
     }
 
