@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import Game from './app/Game';
 import stages from "./data/stages";
 
@@ -26,11 +27,12 @@ function App() {
     };
 
     const puzzleNumber = getPuzzleNumber();
-    const stage = stages[puzzleNumber - 1];
+    const stage = stages[puzzleNumber - 1] ?? { name: '', pack: '', slot: ''};
 
     return (
         <div style={style}>
-            <Game puzzleNumber={puzzleNumber} stage={stage}/>
+            { stage.name && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
+            { !stage.name && <Typography variant="h4" sx={{ margin: '10px'}}>SMB Guesser has ran out of prepared stages :(</Typography>}
         </div>
     );
 };
