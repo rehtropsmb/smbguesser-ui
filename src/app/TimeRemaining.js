@@ -7,7 +7,7 @@ function TimeRemaining() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTimeRemaining(getTimeToMidnight());
+            setTimeRemaining(Math.max(0, getTimeToMidnight()));
         }, 1000);
         
         return () => clearInterval(interval);
@@ -33,9 +33,9 @@ function TimeRemaining() {
     };
 
     return (
-        <Box sx={{ margin: '20px', marginTop: 'auto' }}>
+        <Box sx={{ margin: '20px'}}>
             <Typography variant="h6">
-                Next Game In
+                { timeRemaining > 0 ? 'Next Game In...' : 'Refresh to load next game!'}
             </Typography>
             <Typography variant="h5">
                 { formatTimeRemaining(timeRemaining) }

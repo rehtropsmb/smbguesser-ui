@@ -6,18 +6,19 @@ function ImageDisplay({ currentGuess, gameState, handleSkip, puzzle }) {
 
     const [selectedImage, setSelectedImage] = useState(1);
 
-    const imageUrl = `/images/st${puzzle}/${selectedImage}.webp`;
+    const imageUrl = gameState !== 'LOADING' ? `/images/st${puzzle}/${selectedImage}.webp` : ``;
 
     const numberedButtons = [1, 2, 3, 4, 5].map(n => {
+        const color = gameState === 'WON' ? '#468966' : '#803D3B';
         if (n > currentGuess && gameState === 'PLAYING') {
             return (
-                <Button key={n} variant="contained" disabled sx={{ margin: '5px', minWidth: '42px', backgroundColor: '#B64926', color: 'white' }}>
+                <Button key={n} variant="contained" disabled sx={{ margin: '5px', minWidth: '42px', backgroundColor: color, color: 'white' }}>
                     {n}
                 </Button>
             );
         } else {
             return (
-                <Button key={n} variant="contained" onClick={() => setSelectedImage(n)} sx={{ display: 'inline', margin: '5px', minWidth: '42px', backgroundColor: '#B64926' }}>
+                <Button key={n} variant="contained" onClick={() => setSelectedImage(n)} sx={{ display: 'inline', margin: '5px', minWidth: '42px', backgroundColor: color }}>
                     { selectedImage === n ? (<Typography variant="body1" sx={{ fontWeight: 'bold'}}>{n}</Typography>) : (<Typography variant="body">{n}</Typography>)}
                 </Button>
             );
@@ -33,8 +34,8 @@ function ImageDisplay({ currentGuess, gameState, handleSkip, puzzle }) {
             <Box 
                 component="img"
                 src={imageUrl}
-                alt="Stage Image"
-                sx={{ width: 400, height: 300, borderRadius: '8px' }}
+                alt="Loading..."
+                sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
             />
             <Box>
                 { numberedButtons }

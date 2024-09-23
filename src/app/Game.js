@@ -1,13 +1,13 @@
-import { Typography, Box, Button, Input, Paper } from "@mui/material";
+import { Typography, Box, Button, Paper, Autocomplete, TextField } from "@mui/material";
 import { useState, useEffect } from "react";
 import Results from "./Results";
 import ImageDisplay from "./ImageDisplay";
 import TimeRemaining from "./TimeRemaining";
-import stages from "../data/stages";
 import TopBar from "./TopBar";
-import { fuzzy } from "fast-fuzzy";
+import didYouMean, { ReturnTypeEnums } from "didyoumean2";
+import stagenames from "../data/stagenames";
 
-function Game() {
+function Game({ puzzleNumber, stage }) {
 
     const [gameState, setGameState] = useState('PLAYING');
 
@@ -18,15 +18,6 @@ function Game() {
         const parsed = JSON.parse(saved);
         return parsed ?? [];
     });
-    useEffect(() => {
-
-    }, [gameHistory]);
-
-    // const [gameStats, setGameStats] = useState(() => {
-    //     const saved = localStorage.getItem("gameStats");
-    //     const parsed = JSON.parse(saved);
-    //     return parsed ?? [];
-    // });
 
     const [gameToday, setGameToday] = useState(() => {
         const saved = localStorage.getItem("gameToday");
@@ -45,14 +36,15 @@ function Game() {
             return updated;
         });
     }, [guesses, gameState]);
+    
 
     useEffect(() => {
-        if (gameToday && puzzle === gameToday.puzzle) {
+        if (gameToday && puzzleNumber === gameToday.puzzle) {
             setGuesses(gameToday.guesses);
             setGameState(gameToday.gameState);
         } else {
             setGameToday({
-                puzzle: puzzle,
+                puzzle: puzzleNumber,
                 guesses: [],
                 gameState: 'PLAYING',
             });
@@ -60,90 +52,48 @@ function Game() {
         // Only run once on initial mount
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    const getPuzzleNumber = () => {
-        const startDate = new Date('2024-09-20T00:00:00-04:00'); // Midnight ET on 9/21/2024
-        const now = new Date();
-        const currentDate = new Date(
-          now.toLocaleString('en-US', { timeZone: 'America/New_York' })
-        );
-        const diff = currentDate - startDate;
-        const day = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
-
-        return day;
-    };
-    const [puzzle, setPuzzle] = useState(getPuzzleNumber());
-
-    const stage = stages[getPuzzleNumber() - 1];    
-    
-    const getTimeUntilMidnight = () => {
-        const now = new Date();
-        const currentEasternTime = new Date(
-          now.toLocaleString('en-US', { timeZone: 'America/New_York' })
-        );
-      
-        const nextMidnight = new Date(currentEasternTime);
-        nextMidnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
-      
-        return nextMidnight - currentEasternTime; // Milliseconds until midnight
-      };
-
-    useEffect(() => {
-        // start timer
-        const timeUntilMidnight = getTimeUntilMidnight();
-        const timer = setTimeout(() => {
-            // reset game
-            const num = getPuzzleNumber();
-            setPuzzle(num);
-            setGuesses([]);
-            setGameState('PLAYING');
-            const updated = {
-                puzzle: num,
-                guesses: [],
-                gameState: 'PLAYING',
-            };
-            setGameToday(updated);
-            localStorage.setItem("gameToday", JSON.stringify(updated));
-        }, timeUntilMidnight);
-
-        return () => clearTimeout(timer);
-        // Only run when clock hits midnight
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [puzzle]);
+    console.log(gameState)
     
     const handleEnterKey = (event) => {
         if (event.key === 'Enter') {
             event.stopPropagation();
-            addGuess(inputText);
+            if (!autocompleteOpen) {
+                addGuess(inputText);
+            }
+        } else if (event.key === 'Tab') {
+            event.preventDefault();
+            const filtered = didYouMean(inputText, stagenames, { returnType: ReturnTypeEnums.ALL_SORTED_MATCHES })[0];
+            if (filtered) { setInputText(filtered); }
+            setAutoCompleteOpen(false);
         }
     };
 
     const [inputText, setInputText] = useState('');
-
-    const handleInputChange = (event) => {
-        if (event.target.value.length > 50) { return; }
-        setInputText(event.target.value);
+    const handleInputChange = (event, update, reason) => {
+        if (update.length > 50) { return; }
+        setInputText(update);
     };
 
     const guessDisplay = guesses.map(g => {
+        const backgroundColor = g.value.toLowerCase() === stage.name.toLowerCase() ? '#468966' :'#803D3B';
         return (
-            <Paper elevation={4} key={g.num} sx={{ margin: '10px', padding: '5px', width: '490px' }}>
+            <Paper elevation={4} key={g.num} sx={{ backgroundColor: backgroundColor, color: 'white', margin: '10px', padding: '5px', width: { xs: 340, sm: 390 }}}>
                 <Typography variant="h6">{ g.value }</Typography>
             </Paper>
         );
     });
 
     const addGuess = (guess = '') => {
+        if (gameState !== 'PLAYING') { return; }
         const value = guess ? guess : 'Skipped!';
+        setInputText('');
         setGuesses(prev => {
             const currGuesses = [...prev, { num: prev.length + 1, value }];
             // did player win the game?
-            const similarity = fuzzy(stage.name.toLowerCase(), guess.toLowerCase());
-            console.log('similarity', similarity);
-            if (similarity > 0.85) {
+            if (stage.name.toLowerCase() === guess.toLowerCase()) {
                 setGameState('WON');
                 const result = {
-                    puzzle: puzzle,
+                    puzzle: puzzleNumber,
                     score: currGuesses.length,
                     state: 'W',
                 };
@@ -154,7 +104,7 @@ function Game() {
                 // finish game
                 setGameState('LOST');
                 const result = {
-                    puzzle: puzzle,
+                    puzzle: puzzleNumber,
                     score: guesses.length,
                     state: 'L',
                 };
@@ -162,16 +112,34 @@ function Game() {
                 localStorage.setItem("gameHistory", JSON.stringify(history));
                 setGameHistory(history);
             }
-            setInputText('');
             return currGuesses;
         });
     };
+    const filterOptions = (options, { inputValue }) => {
+        return didYouMean(inputValue, options, { returnType: ReturnTypeEnums.ALL_SORTED_MATCHES }).slice(0, 5);
+    };
+
+    const [autocompleteOpen, setAutoCompleteOpen] = useState(false);
 
     const getInput = () => {
         return  (
             <>
-                <Input placeholder="Enter Stage Name..." value={inputText} onChange={handleInputChange} onKeyDown={handleEnterKey} sx={{ width: '500px', margin: '15px' }}/>
-                <Button key="submit" variant="contained" onClick={() => addGuess(inputText)} sx={{ backgroundColor: '#468966', width: '500px' }}>
+                <Autocomplete
+                    freeSolo
+                    options={stagenames}
+                    filterOptions={filterOptions}
+                    inputValue={inputText}
+                    onInputChange={handleInputChange}
+                    onKeyDown={handleEnterKey}
+                    open={autocompleteOpen}
+                    onOpen={() => setAutoCompleteOpen(true)}
+                    onClose={() => setAutoCompleteOpen(false)}
+                    renderInput={(params) => (
+                        <TextField {...params} label="Enter Stage Name..." variant="outlined"/>
+                    )}
+                    sx={{ width: { xs: 350, sm: 400 }, margin: '15px' }}
+                />
+                <Button key="submit" variant="contained" onClick={() => addGuess(inputText)} sx={{ backgroundColor: '#468966', width: { xs: 350, sm: 400 } }}>
                     <Typography variant="body" sx={{ fontWeight: 'bold'}}>Submit</Typography>
                 </Button>
             </>
@@ -180,7 +148,7 @@ function Game() {
 
     const input = getInput();
 
-    const handleCopyClick = () => {
+    const getCopyText = () => {
         const emoji = guesses.map(g => (g.value.toLowerCase() !== stage.name.toLowerCase() ? `🟥` : `🟩`)).join(' ');
         let score = '';
         if (gameState === 'WON') {
@@ -188,21 +156,16 @@ function Game() {
         } else if (gameState === 'LOST') {
             score = `(X/5)`;
         }
-        const text = `SMB Guesser #${puzzle}\n${emoji} ${score}\nhttps://smbguesser.com`;
-        navigator.clipboard.writeText(text).then(() => {
-            alert("Text copied!");
-        }).catch((err) => {
-            console.error("Failed to copy text: ", err);
-        });
+        return `SMB Guesser #${puzzleNumber}\n${emoji} ${score}\nhttps://smbguesser.com`;
     }
 
     return (
         <>
             <TopBar gameHistory={gameHistory}/>
-            <Typography>Stage #{puzzle}</Typography>
-            <ImageDisplay currentGuess={guesses.length + 1} gameState={gameState} handleSkip={() => addGuess()} puzzle={puzzle}/>
+            <Typography>Stage #{puzzleNumber}</Typography>
+            <ImageDisplay currentGuess={guesses.length + 1} gameState={gameState} handleSkip={() => addGuess()} puzzle={puzzleNumber}/>
             { gameState === "PLAYING" && input }
-            <Results gameState={gameState} onCopyClick={handleCopyClick} stage={stage}/>
+            <Results gameState={gameState} getCopyText={getCopyText} stage={stage}/>
             <Box>
                 { guessDisplay }
             </Box>

@@ -1,11 +1,12 @@
 import { Typography, Box, Button } from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { useState } from "react";
 
-function Results({ gameState, onCopyClick, stage }) {
+function Results({ gameState, stage, getCopyText }) {
 
-    if (gameState === "PLAYING") {
-        return null;
-    }
+    const [copyText, setCopyText] = useState('Share Results');
+
+
 
     const getWon = () => {
         return (
@@ -25,6 +26,19 @@ function Results({ gameState, onCopyClick, stage }) {
 
     const won = getWon();
     const lost = getLost();
+
+    const handleCopyClick = () => {
+        const text = getCopyText();
+        navigator.clipboard.writeText(text).then(() => {
+            setCopyText('Copied!')
+        }).catch((err) => {
+            console.error("Failed to copy text: ", err);
+        });
+    }
+
+    if (gameState === "PLAYING") {
+        return null;
+    }
     
     return (
         <Box>
@@ -36,8 +50,8 @@ function Results({ gameState, onCopyClick, stage }) {
             <Typography variant="h5">
             {stage.slot} {stage.name} from {stage.pack}
             </Typography>
-            <Button variant="contained" onClick={onCopyClick}>
-                Share Results
+            <Button variant="contained" onClick={handleCopyClick}>
+                { copyText }
                 <ContentCopyIcon sx={{ marginLeft: '5px'}}/>
             </Button>
         </Box>

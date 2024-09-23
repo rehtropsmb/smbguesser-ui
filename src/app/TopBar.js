@@ -4,36 +4,11 @@ import InfoIcon from '@mui/icons-material/Info';
 import { useMemo, useState } from "react";
 import InfoDialog from "./InfoDialog";
 import { BarChart } from '@mui/x-charts';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 function TopBar({ gameHistory }) {
     const [infoDialogOpen, setInfoDialogOpen] = useState(false);
     const [leaderboardDialogOpen, setLeaderboardDialogOpen] = useState(false);
-
-    // const raw = [
-    //     { puzzle: 1, score: 1, state: 'W' },
-    //     { puzzle: 2, score: 5, state: 'L' },
-    //     { puzzle: 3, score: 4, state: 'W' },
-    //     { puzzle: 4, score: 3, state: 'W' },
-    //     { puzzle: 5, score: 5, state: 'W' },
-    //     { puzzle: 6, score: 5, state: 'L' },
-    //     { puzzle: 7, score: 5, state: 'W' },
-    //     { puzzle: 8, score: 2, state: 'W' },
-    //     { puzzle: 9, score: 2, state: 'W' },
-    //     { puzzle: 10, score: 1, state: 'W' },
-    //     { puzzle: 11, score: 1, state: 'W' },
-    //     { puzzle: 12, score: 2, state: 'W' },
-    //     { puzzle: 13, score: 4, state: 'W' },
-    //     { puzzle: 14, score: 4, state: 'W' },
-    //     { puzzle: 15, score: 2, state: 'W' },
-    //     { puzzle: 16, score: 1, state: 'W' },
-    //     { puzzle: 17, score: 3, state: 'W' },
-    //     { puzzle: 18, score: 5, state: 'L' },
-    //     { puzzle: 19, score: 5, state: 'L' },
-    //     { puzzle: 20, score: 3, state: 'W' },
-    //     { puzzle: 23, score: 1, state: 'W' },
-    //     { puzzle: 24, score: 4, state: 'W' },
-    //     { puzzle: 25, score: 4, state: 'W' },
-    // ];
 
     const played = gameHistory.length;
     const won = gameHistory.filter(p => p.state === 'W').length;
@@ -89,15 +64,16 @@ function TopBar({ gameHistory }) {
 
     return (
         <>
-            <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'center' }}>
-                <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
+                <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
+                <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '10px', font: 'Gabarito' }}>
                     SMB Guesser
                 </Typography>
-                <IconButton onClick={() => setLeaderboardDialogOpen(true)} sx={{ marginLeft: '100px'}}>
-                    <LeaderboardIcon/>
+                <IconButton onClick={() => setLeaderboardDialogOpen(true)} sx={{ marginLeft: '30px' }}>
+                    <LeaderboardIcon sx={{ color: '#603F26' }}/>
                 </IconButton>
                 <IconButton onClick={() => setInfoDialogOpen(true)}>
-                    <InfoIcon></InfoIcon>
+                    <InfoIcon  sx={{ color: '#603F26' }}/>
                 </IconButton>
                 {/* <IconButton>
                     <SettingsIcon></SettingsIcon>
@@ -106,8 +82,8 @@ function TopBar({ gameHistory }) {
             <InfoDialog open={infoDialogOpen} setOpen={setInfoDialogOpen}/>
             <Dialog open={leaderboardDialogOpen}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', margin: '20px 20px 0px' }}>SMB Guesser Stats</Typography>
-                <DialogContent>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                <DialogContent sx={{ padding: '0px'}}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', justifyItems: 'center', padding: '5px' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '10px' }}>
                             <Typography variant="h5">
                                 { played }
@@ -150,15 +126,15 @@ function TopBar({ gameHistory }) {
                         </Box>
                     </Box>
                     <BarChart
-                        width={350}
                         height={300}
+                        colors={['#468966']}
                         slotProps={{ legend: { hidden: true }}}
                         series={[
                         { data: data, label: 'uv', id: 'uvId' },
                         ]}
                         xAxis={[{ label: 'Number of Guesses', data: xLabels, scaleType: 'band' }]}
                         tooltip={{ trigger: 'none' }}
-                        sx={{ margin: '0px' }}
+                        sx={{ margin: 'auto' }}
                     />
                 </DialogContent>
                 <DialogActions>
