@@ -16,17 +16,17 @@ function InfoDialog({ open, setOpen }) {
                     {`.`}
                 </Box>
                 <Box sx={{ margin:'15px'}}>
-                    {`Every day a new stage will be selected, and you will be shown a screenshot.
+                    {`Every day you will be shown a screenshot of a newly selected stage.
                     Try your best to guess the stage name! If you are incorrect (or if you click skip),
                     you will be shown additional screenshots.`}
                 </Box>
                 <Box sx={{ margin:'15px'}}>
                     {`You get `}
-                    <Typography variant="body" sx={{ fontWeight: 'bold'}}>6 guesses</Typography>
+                    <Typography variant="body" sx={{ fontWeight: 'bold'}}>5 guesses</Typography>
                     {` in total. Once all guesses have been used,
                     the stage will be revealed. Stages will be a mix of both `}
                     <Typography variant="body" sx={{ fontWeight: 'bold'}}>custom and vanilla stages from Super Monkey Ball 2</Typography>
-                    {`.`}
+                    {`. Currently stages from SMB2, Gaiden, Launch, Invasion and Stardust are available to be selected (but more packs will come later!)`}
                 </Box>
                 <Box sx={{ margin:'15px'}}>
                     {`The next day's puzzle begins at 4:00 UTC (midnight EDT). Good luck!`}

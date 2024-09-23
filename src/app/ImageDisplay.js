@@ -43,40 +43,35 @@ function ImageDisplay({ currentGuess, gameState, handleSkip, puzzle }) {
                 <Box 
                     component="img"
                     src={isNotLoading ? imageUrls[0] : ''}
-                    alt="Loading..."
-                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B', backgroundColor: '#603F26' }}
                 />
             )}
             { selectedImage === 2 && (
                 <Box 
                     component="img"
                     src={isNotLoading ? imageUrls[1] : ''}
-                    alt="Loading..."
-                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B', backgroundColor: '#603F26' }}
                 />
             )}
             { selectedImage === 3 && (
                 <Box 
                     component="img"
                     src={isNotLoading ? imageUrls[2] : ''}
-                    alt="Loading..."
-                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B', backgroundColor: '#603F26' }}
                 />
             )}
             { selectedImage === 4 && (
                 <Box 
                     component="img"
                     src={isNotLoading ? imageUrls[3] : ''}
-                    alt="Loading..."
-                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B', backgroundColor: '#603F26' }}
                 />
             )}
             { selectedImage === 5 && (
                 <Box 
                     component="img"
                     src={isNotLoading ? imageUrls[4] : ''}
-                    alt="Loading..."
-                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B' }}
+                    sx={{ width: { xs: 340, sm: 400, md: 500 }, height: { xs: 255, sm: 300, md: 375 }, borderRadius: '8px', border: '2px solid #322C2B', backgroundColor: '#603F26' }}
                 />
             )}
             <Box>

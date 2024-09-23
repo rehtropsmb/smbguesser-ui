@@ -49,6 +49,12 @@ function App() {
                     <TimeRemaining/>
                 </>
             )}
+            {/* <Typography variant="body2" sx={{ maxWidth: '600px', fontWeight: 'bold' }}>
+                September 24th, 2024: 
+            </Typography>
+            <Typography variant="body1" sx={{ maxWidth: '600px', marginBottom: '15px' }}>
+                Welcome to SMB Guesser! Make sure to click the info button in the top right to learn more about the game.
+            </Typography> */}
         </div>
     );
 };

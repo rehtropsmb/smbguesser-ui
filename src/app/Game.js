@@ -167,7 +167,10 @@ function Game({ puzzleNumber, stage }) {
     const input = getInput();
 
     const getCopyText = () => {
-        const emoji = guesses.map(g => (g.value.toLowerCase() !== stage.name.toLowerCase() ? `🟥` : `🟩`)).join(' ');
+        let emoji = guesses.map(g => (g.value.toLowerCase() !== stage.name.toLowerCase() ? `🟥` : `🟩`)).join(' ');
+        for (let i = 0; i < 5 - guesses.length; i++) {
+            emoji += `⬛`;
+        }
         let score = '';
         if (gameState === 'WON') {
             score = `(${guesses.length}/5)`;
