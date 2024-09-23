@@ -9,7 +9,7 @@ import stagenames from "../data/stagenames";
 
 function Game({ puzzleNumber, stage }) {
 
-    const [gameState, setGameState] = useState('PLAYING');
+    const [gameState, setGameState] = useState('LOADING');
 
     const [guesses, setGuesses] = useState([]);
 
@@ -38,6 +38,7 @@ function Game({ puzzleNumber, stage }) {
     }, [guesses, gameState]);
     
 
+    // initial load of gameToday
     useEffect(() => {
         if (gameToday && puzzleNumber === gameToday.puzzle) {
             setGuesses(gameToday.guesses);
@@ -48,11 +49,15 @@ function Game({ puzzleNumber, stage }) {
                 guesses: [],
                 gameState: 'PLAYING',
             });
+            setGameState('PLAYING')
         }
         // Only run once on initial mount
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    console.log(gameState)
+
+    useEffect(() => {
+
+    }, )
     
     const handleEnterKey = (event) => {
         if (event.key === 'Enter') {

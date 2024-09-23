@@ -36,7 +36,7 @@ function Results({ gameState, stage, getCopyText }) {
         });
     }
 
-    if (gameState === "PLAYING") {
+    if (gameState === "PLAYING" || gameState === "LOADING") {
         return null;
     }
     

@@ -10,7 +10,7 @@ function ImageDisplay({ currentGuess, gameState, handleSkip, puzzle }) {
 
     const numberedButtons = [1, 2, 3, 4, 5].map(n => {
         const color = gameState === 'WON' ? '#468966' : '#803D3B';
-        if (n > currentGuess && gameState === 'PLAYING') {
+        if ((n > currentGuess && gameState === 'PLAYING') || gameState === 'LOADING') {
             return (
                 <Button key={n} variant="contained" disabled sx={{ margin: '5px', minWidth: '42px', backgroundColor: color, color: 'white' }}>
                     {n}
