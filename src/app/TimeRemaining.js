@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 function TimeRemaining() {
 
     const [timeRemaining, setTimeRemaining] = useState(getTimeToMidnight());
+    const [ready, setReady] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTimeRemaining(Math.max(0, getTimeToMidnight()));
+            const time = getTimeToMidnight();
+            setTimeRemaining(Math.max(0, time));
+            if (time < 2_500) {
+                setReady(true);
+            }
         }, 1000);
         
         return () => clearInterval(interval);
@@ -33,10 +38,10 @@ function TimeRemaining() {
     return (
         <Box sx={{ margin: '20px'}}>
             <Typography variant="h6">
-                { timeRemaining > 0 ? 'Next Game In...' : 'Refresh to load next game!'}
+                { !ready ? 'Next Game In...' : 'Refresh to load next game!' }
             </Typography>
             <Typography variant="h5">
-                { formatTimeRemaining(timeRemaining) }
+                { !ready ? formatTimeRemaining(timeRemaining) : formatTimeRemaining(0) }
             </Typography>
         </Box>
     );
