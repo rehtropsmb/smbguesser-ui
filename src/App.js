@@ -40,12 +40,10 @@ function App() {
                             SMB Guesser
                         </Typography>
                     </Box>
-                    {/* <Typography variant="body1">No stage prepared for day #{puzzleNumber}.</Typography>
+                    <Typography variant="body1">No stage prepared for day #{puzzleNumber}.</Typography>
                     <Typography variant="body1">Thanks so much for enjoying my game!</Typography>
                     <Typography variant="body1">Please send me a Discord message if you'd like to see the game continue.</Typography>
-                    <Typography variant="body1">- rehtrop</Typography> */}
-                    <Typography variant="body1">It's almost here :D</Typography>
-                    <Typography variant="body1">- rehtrop</Typography>
+                    <Typography variant="body1">-rehtrop</Typography>
                     <TimeRemaining/>
                 </>
             )}

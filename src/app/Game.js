@@ -169,7 +169,7 @@ function Game({ puzzleNumber, stage }) {
     const getCopyText = () => {
         let emoji = guesses.map(g => (g.value.toLowerCase() !== stage.name.toLowerCase() ? `🟥` : `🟩`)).join(' ');
         for (let i = 0; i < 5 - guesses.length; i++) {
-            emoji += `⬛`;
+            emoji += ` ⬛`;
         }
         let score = '';
         if (gameState === 'WON') {
