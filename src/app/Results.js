@@ -2,7 +2,7 @@ import { Typography, Box, Button } from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useState } from "react";
 
-function Results({ gameState, stage, getCopyText }) {
+function Results({ gameState, stage, getCopyText, score }) {
 
     const [copyText, setCopyText] = useState('Share Results');
 
@@ -11,7 +11,7 @@ function Results({ gameState, stage, getCopyText }) {
     const getWon = () => {
         return (
             <Typography variant="h5">
-                Congrats!
+                Congrats! ({score}/5)
             </Typography>
         );
     }
@@ -19,7 +19,7 @@ function Results({ gameState, stage, getCopyText }) {
     const getLost = () => {
         return (
             <Typography variant="h5">
-                Better luck next time!
+                Better luck next time! (X/5)
             </Typography>
         );
     }

@@ -195,7 +195,7 @@ function Game({ puzzleNumber, stage }) {
             <Typography>Stage #{puzzleNumber}</Typography>
             <ImageDisplay currentGuess={guesses.length + 1} gameState={gameState} handleSkip={() => addGuess()} puzzle={puzzleNumber}/>
             { gameState === "PLAYING" && input }
-            <Results gameState={gameState} getCopyText={getCopyText} stage={stage}/>
+            <Results gameState={gameState} getCopyText={getCopyText} stage={stage} score={guesses.length}/>
             <Box>
                 { guessDisplay }
             </Box>
