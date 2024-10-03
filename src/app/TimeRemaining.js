@@ -10,7 +10,7 @@ function TimeRemaining() {
         const interval = setInterval(() => {
             const time = getTimeToMidnight();
             setTimeRemaining(Math.max(0, time));
-            if (time < 2_500) {
+            if (time < 1_500) {
                 setReady(true);
             }
         }, 1000);
