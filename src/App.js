@@ -1,4 +1,4 @@
-import { Typography, Box, Link } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import Game from './app/Game';
 import stages from "./data/stages";
 import TimeRemaining from './app/TimeRemaining';
@@ -46,14 +46,6 @@ function App() {
                     <TimeRemaining/>
                 </>
             )}
-            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
-                October 3rd, 2024: 
-            </Typography>
-            <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                {`Please fill `}
-                <Link href="https://forms.gle/GSYZzQM8vbtB1AWj8">this survey</Link>
-                {` to help determine which packs may come to SMB Guesser in the future!`}
-            </Typography>
         </div>
     );
 };

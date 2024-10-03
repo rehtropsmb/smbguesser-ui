@@ -1,4 +1,4 @@
-import { Typography, Box, Button, Paper, Autocomplete, TextField } from "@mui/material";
+import { Typography, Box, Button, Paper, Autocomplete, TextField, Link } from "@mui/material";
 import { useState, useEffect, useMemo } from "react";
 import Results from "./Results";
 import ImageDisplay from "./ImageDisplay";
@@ -7,6 +7,7 @@ import TopBar from "./TopBar";
 import didYouMean, { ReturnTypeEnums } from "didyoumean2";
 import stagenames from "../data/stagenames";
 import ConfettiExplosion from "react-confetti-explosion";
+import UpdateDialog from "./UpdateDialog";
 
 function Game({ puzzleNumber, stage }) {
 
@@ -26,6 +27,19 @@ function Game({ puzzleNumber, stage }) {
         return parsed ?? null;
     });
 
+    const CURRENT_UPDATE = 1;
+    const [lastUpdate, setLastUpdate] = useState(() => {
+        const saved = localStorage.getItem("lastUpdate");
+        const parsed = JSON.parse(saved);
+        return parsed ?? 0;
+    });
+    const [updateDialogOpen, setUpdateDialogOpen] = useState(false);
+    const setUpdateDialogViewed = () => {
+        setLastUpdate(CURRENT_UPDATE);
+
+        localStorage.setItem("lastUpdate", JSON.stringify(CURRENT_UPDATE));
+    };
+
     const [confetti, setConfetti] = useState(false);
 
     useEffect(() => {
@@ -44,6 +58,11 @@ function Game({ puzzleNumber, stage }) {
 
     // initial load of gameToday
     useEffect(() => {
+        // localStorage.setItem("lastUpdate", JSON.stringify(CURRENT_UPDATE));
+        if (lastUpdate < CURRENT_UPDATE) {
+            setUpdateDialogOpen(true);
+        }
+
         if (gameToday && puzzleNumber === gameToday.puzzle) {
             setGuesses(gameToday.guesses);
             setGameState(gameToday.gameState);
@@ -200,6 +219,16 @@ function Game({ puzzleNumber, stage }) {
                 { guessDisplay }
             </Box>
             <TimeRemaining/>
+
+            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+                October 3rd, 2024: 
+            </Typography>
+            <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
+            <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
+                {`Please fill out `}
+                <Link href="https://forms.gle/GSYZzQM8vbtB1AWj8" sx={{ fontWeight: 'bold'}}>this survey</Link>
+                {` to help determine which packs may come to SMB Guesser in the future!`}
+            </Typography>
         </>
     );
 }

@@ -10,9 +10,9 @@ function InfoDialog({ open, setOpen }) {
                 <Box sx={{ margin:'15px'}}>
                     <Typography variant="body" sx={{ fontWeight: 'bold'}}>SMB Guesser</Typography>
                     {` is a daily puzzle game inspired by games like `}
-                    <Link href="https://www.nytimes.com/games/wordle/index.html">Wordle</Link>
+                    <Link href="https://www.nytimes.com/games/wordle/index.html" sx={{ fontWeight: 'bold'}}>Wordle</Link>
                     {` and `}
-                    <Link href="https://guessthe.game/">GuessTheGame</Link>
+                    <Link href="https://guessthe.game/" sx={{ fontWeight: 'bold'}}>GuessTheGame</Link>
                     {`.`}
                 </Box>
                 <Box sx={{ margin:'15px'}}>
