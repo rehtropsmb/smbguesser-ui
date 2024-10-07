@@ -1,4 +1,4 @@
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Link, Box, Typography } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Box, Typography } from "@mui/material";
 
 function UpdateDialog({ open, setOpen, setUpdateDialogViewed }) {
     const handleClose = () => {
@@ -13,13 +13,11 @@ function UpdateDialog({ open, setOpen, setUpdateDialogViewed }) {
             </DialogTitle>
             <DialogContent>
                 <Box sx={{ margin:'15px'}}>
-                    <Typography variant="body" sx={{ fontWeight: 'bold'}}>October 3rd, 2024</Typography>
+                    <Typography variant="body" sx={{ fontWeight: 'bold'}}>October 7th, 2024</Typography>
                 </Box>
                 <Box sx={{ margin:'15px'}}>
                     <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                        {`Please fill out `}
-                        <Link href="https://forms.gle/GSYZzQM8vbtB1AWj8" sx={{ fontWeight: 'bold'}}>this survey</Link>
-                        {` to help determine which packs may come to SMB Guesser in the future!`}
+                        Thanks to everyone who filled out the survey! The overwhelming majority of people wanted to see Deluxe and 651 stages, so puzzles from those packs will be coming soon!
                     </Typography>
                 </Box>
             </DialogContent>

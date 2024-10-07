@@ -1,4 +1,4 @@
-import { Typography, Box, Button, Paper, Autocomplete, TextField, Link } from "@mui/material";
+import { Typography, Box, Button, Paper, Autocomplete, TextField } from "@mui/material";
 import { useState, useEffect, useMemo } from "react";
 import Results from "./Results";
 import ImageDisplay from "./ImageDisplay";
@@ -27,7 +27,7 @@ function Game({ puzzleNumber, stage }) {
         return parsed ?? null;
     });
 
-    const CURRENT_UPDATE = 1;
+    const CURRENT_UPDATE = 2;
     const [lastUpdate, setLastUpdate] = useState(() => {
         const saved = localStorage.getItem("lastUpdate");
         const parsed = JSON.parse(saved);
@@ -220,14 +220,12 @@ function Game({ puzzleNumber, stage }) {
             </Box>
             <TimeRemaining/>
 
-            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
-                October 3rd, 2024: 
-            </Typography>
             <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
+            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+                October 7th, 2024: 
+            </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                {`Please fill out `}
-                <Link href="https://forms.gle/GSYZzQM8vbtB1AWj8" sx={{ fontWeight: 'bold'}}>this survey</Link>
-                {` to help determine which packs may come to SMB Guesser in the future!`}
+                Thanks to everyone who filled out the survey! The overwhelming majority of people wanted to see Deluxe and 651 stages, so puzzles from those packs will be coming soon!
             </Typography>
         </>
     );
