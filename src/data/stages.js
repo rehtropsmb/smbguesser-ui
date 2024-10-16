@@ -27,15 +27,19 @@ const stages = [
     { name: "Floaters", pack: "SMB2", slot: "1-6" },
     { name: "Sky Trampolines", pack: "Invasion", slot: "5-2" },
     { name: "Expedition", pack: "Gaiden", slot: "1-4" },
-    { name: "Matrix", pack: "Launch!", slot: "10-1" },
+    { name: "Network", pack: "651", slot: "9-4" },
     { name: "Crumbled Castle", pack: "Invasion", slot: "7-8" },
     // Days 26 to 30
     { name: "Slippery Speedway", pack: "Stardust", slot: "7-9" },
-    { name: "Pistons", pack: "SMB2", slot: "Expert 31" },
+    { name: "Scoop", pack: "651", slot: "4-7" },
     { name: "Dominion", pack: "Launch!", slot: "1-4" },
+    { name: "Drop In", pack: "651", slot: "6-6" },
+    { name: "Matrix", pack: "Launch!", slot: "10-1" },
+    // Days 31 to 35
+    { name: "Pistons", pack: "SMB2", slot: "Expert 31" },
+    { name: "Restless", pack: "651", slot: "1-6" },
     { name: "Reveal", pack: "Stardust", slot: "1-6" },
     { name: "", pack: "", slot: "" },
-    // Days 31 to 35
     // Days 36 to 40
     // Days 41 to 45
     // Days 46 to 50
