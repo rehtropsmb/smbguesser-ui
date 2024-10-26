@@ -39,10 +39,26 @@ const stages = [
     { name: "Pistons", pack: "SMB2", slot: "Expert 31" },
     { name: "Restless", pack: "651", slot: "1-6" },
     { name: "Reveal", pack: "Stardust", slot: "1-6" },
-    { name: "", pack: "", slot: "" },
+    { name: "Rotary Orbit", pack: "Launch!", slot: "9-10" },
+    { name: "Crease", pack: "Launch!", slot: "1-7" },
     // Days 36 to 40
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
     // Days 41 to 45
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
     // Days 46 to 50
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
 
     { name: "", pack: "", slot: "" },
 ];
