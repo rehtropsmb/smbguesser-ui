@@ -42,7 +42,7 @@ const stages = [
     { name: "Rotary Orbit", pack: "Launch!", slot: "9-10" },
     { name: "Crease", pack: "Launch!", slot: "1-7" },
     // Days 36 to 40
-    { name: "", pack: "", slot: "" },
+    { name: "Lunchbox", pack: "Deluxe", slot: "Beginner 18" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
