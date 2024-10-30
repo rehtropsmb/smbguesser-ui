@@ -43,7 +43,7 @@ const stages = [
     { name: "Crease", pack: "Launch!", slot: "1-7" },
     // Days 36 to 40
     { name: "Lunchbox", pack: "Deluxe", slot: "Beginner 18" },
-    { name: "", pack: "", slot: "" },
+    { name: "Nice Shot!", pack: "Invasion", slot: "3-8" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
