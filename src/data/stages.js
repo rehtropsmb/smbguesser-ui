@@ -44,7 +44,7 @@ const stages = [
     // Days 36 to 40
     { name: "Lunchbox", pack: "Deluxe", slot: "Beginner 18" },
     { name: "Nice Shot!", pack: "Invasion", slot: "3-8" },
-    { name: "", pack: "", slot: "" },
+    { name: "Solar Flare", pack: "Launch!", slot: "3-3" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     // Days 41 to 45
