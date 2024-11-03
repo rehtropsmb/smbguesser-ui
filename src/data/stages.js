@@ -48,7 +48,7 @@ const stages = [
     { name: "Ice Skate Park", pack: "Invasion", slot: "4-9" },
     { name: "Warp", pack: "SMB2", slot: "E37" },
     // Days 41 to 45
-    { name: "", pack: "", slot: "" },
+    { name: "Pandora's Box", pack: "Gaiden", slot: "10-2" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
