@@ -20,8 +20,8 @@ function TimeRemaining() {
 
     function getTimeToMidnight() {
         const now = new Date();
-        const date = now.getUTCHours() < 4 ? now.getUTCDate() : now.getUTCDate() + 1;
-        const midnight = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), date, 4, 0, 0));
+        const date = now.getUTCHours() < 5 ? now.getUTCDate() : now.getUTCDate() + 1;
+        const midnight = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), date, 5, 0, 0));
         const diff = midnight - now;
         return diff;
     }

@@ -17,9 +17,14 @@ const style = {
 
 function App() {
     const getPuzzleNumber = () => {
+        // use after falling back an hour
         const startDate = new Date('2024-09-24T00:00:00-05:00'); // Midnight ET on 9/24/2024
+        // use after springing forwards an hour
+        // const startDate = new Date('2024-09-24T00:00:00-04:00'); // Midnight ET on 9/24/2024
+        // also make sure to update TimeRemaining.js
+
+
         const now = new Date();
-        
         const diff = now - startDate;
         const day = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
 
