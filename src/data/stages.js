@@ -50,7 +50,7 @@ const stages = [
     // Days 41 to 45
     { name: "Pandora's Box", pack: "Gaiden", slot: "10-2" },
     { name: "Ikaruga", pack: "Gaiden", slot: "7-1" },
-    { name: "", pack: "", slot: "" },
+    { name: "Mountain", pack: "SMB2", slot: "10-3" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     // Days 46 to 50
