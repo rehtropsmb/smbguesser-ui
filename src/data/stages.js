@@ -51,7 +51,7 @@ const stages = [
     { name: "Pandora's Box", pack: "Gaiden", slot: "10-2" },
     { name: "Ikaruga", pack: "Gaiden", slot: "7-1" },
     { name: "Mountain", pack: "SMB2", slot: "10-3" },
-    { name: "", pack: "", slot: "" },
+    { name: "Nanobot Invasion", pack: "Stardust", slot: "9-4" },
     { name: "", pack: "", slot: "" },
     // Days 46 to 50
     { name: "", pack: "", slot: "" },
