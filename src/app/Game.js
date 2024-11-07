@@ -221,12 +221,12 @@ function Game({ puzzleNumber, stage }) {
             <TimeRemaining/>
 
             <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
-            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+            {/* <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
                 October 7th, 2024: 
             </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
                 Thanks to everyone who filled out the survey! The overwhelming majority of people wanted to see Deluxe and 651 stages, so puzzles from those packs will be coming soon!
-            </Typography>
+            </Typography> */}
         </>
     );
 }
