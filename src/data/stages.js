@@ -52,7 +52,7 @@ const stages = [
     { name: "Ikaruga", pack: "Gaiden", slot: "7-1" },
     { name: "Mountain", pack: "SMB2", slot: "10-3" },
     { name: "Nanobot Invasion", pack: "Stardust", slot: "9-4" },
-    { name: "", pack: "", slot: "" },
+    { name: "Infinity Mirror", pack: "Invasion", slot: "2-1" },
     // Days 46 to 50
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
