@@ -56,7 +56,7 @@ const stages = [
     // Days 46 to 50
     { name: "Exodus", pack: "Gaiden", slot: "10-1" },
     { name: "Mini Map Assist", pack: "651", slot: "7-10" },
-    { name: "", pack: "", slot: "" },
+    { name: "Waves", pack: "651", slot: "3-8" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
 
