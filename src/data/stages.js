@@ -55,7 +55,7 @@ const stages = [
     { name: "Infinity Mirror", pack: "Invasion", slot: "2-1" },
     // Days 46 to 50
     { name: "Exodus", pack: "Gaiden", slot: "10-1" },
-    { name: "", pack: "", slot: "" },
+    { name: "Mini Map Assist", pack: "651", slot: "7-10" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
