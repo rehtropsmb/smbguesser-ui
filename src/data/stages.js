@@ -57,7 +57,7 @@ const stages = [
     { name: "Exodus", pack: "Gaiden", slot: "10-1" },
     { name: "Mini Map Assist", pack: "651", slot: "7-10" },
     { name: "Waves", pack: "651", slot: "3-8" },
-    { name: "", pack: "", slot: "" },
+    { name: "8 Friends :)", pack: "Stardust", slot: "7-7" },
     { name: "", pack: "", slot: "" },
 
     { name: "", pack: "", slot: "" },
