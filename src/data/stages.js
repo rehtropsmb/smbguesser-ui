@@ -58,7 +58,20 @@ const stages = [
     { name: "Mini Map Assist", pack: "651", slot: "7-10" },
     { name: "Waves", pack: "651", slot: "3-8" },
     { name: "8 Friends :)", pack: "Stardust", slot: "7-7" },
+    { name: "Shatter", pack: "Stardust", slot: "3-1" },
+    // Days 51 to 55
     { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days 56 to 60
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days
 
     { name: "", pack: "", slot: "" },
 ];
