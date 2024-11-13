@@ -60,7 +60,7 @@ const stages = [
     { name: "8 Friends :)", pack: "Stardust", slot: "7-7" },
     { name: "Shatter", pack: "Stardust", slot: "3-1" },
     // Days 51 to 55
-    { name: "", pack: "", slot: "" },
+    { name: "Collapsing Bridge", pack: "Invasion", slot: "7-1" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
