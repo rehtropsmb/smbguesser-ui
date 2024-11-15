@@ -62,7 +62,7 @@ const stages = [
     // Days 51 to 55
     { name: "Collapsing Bridge", pack: "Invasion", slot: "7-1" },
     { name: "Train Worm", pack: "SMB2", slot: "Expert Extra 10" },
-    { name: "", pack: "", slot: "" },
+    { name: "Pulley", pack: "Launch!", slot: "7-9" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     // Days 56 to 60
@@ -80,7 +80,7 @@ export default stages;
 
 // SMB2
 // Stardust
-// Launch
+// Launch!
 // Gaiden
 // 651
 // Invasion
