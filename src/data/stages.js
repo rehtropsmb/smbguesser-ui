@@ -63,7 +63,7 @@ const stages = [
     { name: "Collapsing Bridge", pack: "Invasion", slot: "7-1" },
     { name: "Train Worm", pack: "SMB2", slot: "Expert Extra 10" },
     { name: "Pulley", pack: "Launch!", slot: "7-9" },
-    { name: "", pack: "", slot: "" },
+    { name: "Domes", pack: "SMB2", slot: "Advanced Extra 6" },
     { name: "", pack: "", slot: "" },
     // Days 56 to 60
     { name: "", pack: "", slot: "" },
