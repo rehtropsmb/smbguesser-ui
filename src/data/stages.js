@@ -64,7 +64,7 @@ const stages = [
     { name: "Train Worm", pack: "SMB2", slot: "Expert Extra 10" },
     { name: "Pulley", pack: "Launch!", slot: "7-9" },
     { name: "Domes", pack: "SMB2", slot: "Advanced Extra 6" },
-    { name: "", pack: "", slot: "" },
+    { name: "Gauntlet", pack: "Gaiden", slot: "Master Extra 9" },
     // Days 56 to 60
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
