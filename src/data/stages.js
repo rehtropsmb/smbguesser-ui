@@ -66,6 +66,24 @@ const stages = [
     { name: "Domes", pack: "SMB2", slot: "Advanced Extra 6" },
     { name: "Gauntlet", pack: "Gaiden", slot: "Master Extra 9" },
     // Days 56 to 60
+    { name: "Proportional Editing", pack: "Invasion", slot: "10-3" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
