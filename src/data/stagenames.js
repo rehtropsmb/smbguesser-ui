@@ -856,7 +856,6 @@ const deluxe = [
     `Twin Attacker`,
     `Entangled Path`,
     `Totters`,
-    `Snake`,
     `Vortex`,
     `Wind`,
     `Warp`,
