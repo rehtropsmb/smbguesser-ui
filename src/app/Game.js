@@ -123,6 +123,9 @@ function Game({ puzzleNumber, stage }) {
             if (stage.name.toLowerCase() === guess.toLowerCase()) {
                 setGameState('WON');
                 setConfetti(true);
+                setTimeout(() => {
+                    setConfetti(false)
+                }, 3_500);
                 const result = {
                     puzzle: puzzleNumber,
                     score: currGuesses.length,
