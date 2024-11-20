@@ -68,7 +68,7 @@ const stages = [
     // Days 56 to 60
     { name: "Proportional Editing", pack: "Invasion", slot: "10-3" },
     { name: "Snake", pack: "Deluxe", slot: "Expert 42" },
-    { name: "", pack: "", slot: "" },
+    { name: "Partition", pack: "SMB2", slot: "Expert 5" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     // Days
