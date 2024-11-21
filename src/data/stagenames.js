@@ -879,7 +879,6 @@ const deluxe = [
     `Cassiopeia`,
     `Pirates`,
     `Gaps`,
-    `Ant Lion Super`,
     `Bowl Open`,
     `Carpet`,
     `Mixer`,

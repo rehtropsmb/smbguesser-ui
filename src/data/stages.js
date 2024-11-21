@@ -69,7 +69,7 @@ const stages = [
     { name: "Proportional Editing", pack: "Invasion", slot: "10-3" },
     { name: "Snake", pack: "Deluxe", slot: "Expert 42" },
     { name: "Partition", pack: "SMB2", slot: "Expert 5" },
-    { name: "", pack: "", slot: "" },
+    { name: "Ant Lion Super", pack: "Deluxe", slot: "9-20" },
     { name: "", pack: "", slot: "" },
     // Days
     { name: "", pack: "", slot: "" },
