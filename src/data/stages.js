@@ -70,7 +70,7 @@ const stages = [
     { name: "Snake", pack: "Deluxe", slot: "Expert 42" },
     { name: "Partition", pack: "SMB2", slot: "Expert 5" },
     { name: "Ant Lion Super", pack: "Deluxe", slot: "9-20" },
-    { name: "", pack: "", slot: "" },
+    { name: "Pour", pack: "651", slot: "7-8" },
     // Days
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
