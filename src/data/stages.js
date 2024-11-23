@@ -72,7 +72,7 @@ const stages = [
     { name: "Ant Lion Super", pack: "Deluxe", slot: "9-20" },
     { name: "Pour", pack: "651", slot: "7-8" },
     // Days
-    { name: "", pack: "", slot: "" },
+    { name: "Cycle Hit", pack: "Gaiden", slot: "3-1" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
