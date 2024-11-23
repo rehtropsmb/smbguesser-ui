@@ -73,7 +73,7 @@ const stages = [
     { name: "Pour", pack: "651", slot: "7-8" },
     // Days
     { name: "Cycle Hit", pack: "Gaiden", slot: "3-1" },
-    { name: "", pack: "", slot: "" },
+    { name: "Rapids", pack: "Stardust", slot: "10-6" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
