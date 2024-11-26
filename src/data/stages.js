@@ -75,7 +75,7 @@ const stages = [
     { name: "Cycle Hit", pack: "Gaiden", slot: "3-1" },
     { name: "Rapids", pack: "Stardust", slot: "10-6" },
     { name: "Reel", pack: "Launch!", slot: "3-5" },
-    { name: "", pack: "", slot: "" },
+    { name: "Birth", pack: "SMB2", slot: "Beginner Extra 10" },
     { name: "", pack: "", slot: "" },
     // Days
     { name: "", pack: "", slot: "" },
