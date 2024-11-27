@@ -71,12 +71,12 @@ const stages = [
     { name: "Partition", pack: "SMB2", slot: "Expert 5" },
     { name: "Ant Lion Super", pack: "Deluxe", slot: "9-20" },
     { name: "Pour", pack: "651", slot: "7-8" },
-    // Days
+    // Days 61 to 65
     { name: "Cycle Hit", pack: "Gaiden", slot: "3-1" },
     { name: "Rapids", pack: "Stardust", slot: "10-6" },
     { name: "Reel", pack: "Launch!", slot: "3-5" },
     { name: "Birth", pack: "SMB2", slot: "Beginner Extra 10" },
-    { name: "", pack: "", slot: "" },
+    { name: "Deranged Toy", pack: "Invasion", slot: "5-9" },
     // Days
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
