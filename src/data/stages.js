@@ -78,7 +78,7 @@ const stages = [
     { name: "Birth", pack: "SMB2", slot: "Beginner Extra 10" },
     { name: "Deranged Toy", pack: "Invasion", slot: "5-9" },
     // Days
-    { name: "", pack: "", slot: "" },
+    { name: "Lava Plume", pack: "Launch!", slot: "6-2" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
