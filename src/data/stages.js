@@ -77,8 +77,20 @@ const stages = [
     { name: "Reel", pack: "Launch!", slot: "3-5" },
     { name: "Birth", pack: "SMB2", slot: "Beginner Extra 10" },
     { name: "Deranged Toy", pack: "Invasion", slot: "5-9" },
-    // Days
+    // Days 66 to 70
     { name: "Lava Plume", pack: "Launch!", slot: "6-2" },
+    { name: "Middle Jam", pack: "Deluxe", slot: "5-10" },
+    { name: "Ruffle", pack: "Invasion", slot: "5-8" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days 71 to 75
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days 76 to 80
+    { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
@@ -89,7 +101,6 @@ const stages = [
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
-    // Days
 
     { name: "", pack: "", slot: "" },
 ];
