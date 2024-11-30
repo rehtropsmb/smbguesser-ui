@@ -81,7 +81,7 @@ const stages = [
     { name: "Lava Plume", pack: "Launch!", slot: "6-2" },
     { name: "Middle Jam", pack: "Deluxe", slot: "5-10" },
     { name: "Ruffle", pack: "Invasion", slot: "5-8" },
-    { name: "", pack: "", slot: "" },
+    { name: "Feedback Loop", pack: "651", slot: "4-4" },
     { name: "", pack: "", slot: "" },
     // Days 71 to 75
     { name: "", pack: "", slot: "" },
