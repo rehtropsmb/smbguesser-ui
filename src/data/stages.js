@@ -82,7 +82,7 @@ const stages = [
     { name: "Middle Jam", pack: "Deluxe", slot: "5-10" },
     { name: "Ruffle", pack: "Invasion", slot: "5-8" },
     { name: "Feedback Loop", pack: "651", slot: "4-4" },
-    { name: "", pack: "", slot: "" },
+    { name: "Showerhead", pack: "Stardust", slot: "1-4" },
     // Days 71 to 75
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
