@@ -572,6 +572,7 @@ const launch = [
     `Do You Wanna Build A Snowman?`,
     `Super Monkey Maker`,
     `Interchange`,
+    `Accelerator`,
     `Infiltrate`,
     `Galeforce`,
     `Commingle Soiree`,
