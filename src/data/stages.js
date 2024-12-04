@@ -85,7 +85,7 @@ const stages = [
     { name: "Showerhead", pack: "Stardust", slot: "1-4" },
     // Days 71 to 75
     { name: "Accelerator", pack: "Launch!", slot: "9-3" },
-    { name: "", pack: "", slot: "" },
+    { name: "Conquest", pack: "Launch!", slot: "Master Extra 2" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
