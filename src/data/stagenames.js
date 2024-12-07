@@ -904,7 +904,7 @@ const deluxe = [
     `Sliders`,
     `Scabrous`,
     `Jolt Channel`,
-    `Intertial`,
+    `Inertial`,
     `Octagonal`,
     `Sewer`,
     `Arc Bridges`,
