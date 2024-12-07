@@ -88,7 +88,7 @@ const stages = [
     { name: "Conquest", pack: "Launch!", slot: "Master Extra 2" },
     { name: "Emergency Brake", pack: "Gaiden", slot: "2-2" },
     { name: "Sliced Cheese", pack: "SMB2", slot: "Master Extra 5" },
-    { name: "", pack: "", slot: "" },
+    { name: "Inertial", pack: "Deluxe", slot: "Beginner 32" },
     // Days 76 to 80
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
