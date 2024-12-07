@@ -755,7 +755,6 @@ const deluxe = [
     `Coaster`,
     `Organic Form`,
     `Repulse`,
-    `Intertial`,
     `Octagonal`,
     `Stepping Stones`,
     `Narrow Bridge`,
