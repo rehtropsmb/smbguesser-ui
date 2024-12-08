@@ -90,7 +90,7 @@ const stages = [
     { name: "Sliced Cheese", pack: "SMB2", slot: "Master Extra 5" },
     { name: "Inertial", pack: "Deluxe", slot: "Beginner 32" },
     // Days 76 to 80
-    { name: "", pack: "", slot: "" },
+    { name: "Solar Orbit", pack: "Stardust", slot: "Interstellar 3" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
