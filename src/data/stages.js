@@ -93,15 +93,15 @@ const stages = [
     { name: "Solar Orbit", pack: "Stardust", slot: "Interstellar 3" },
     { name: "Woodpecker", pack: "Invasion", slot: "3-7" },
     { name: "Rigidify", pack: "Gaiden", slot: "6-4" },
+    { name: "Repellent", pack: "651", slot: "5-6" },
+    { name: "", pack: "", slot: "" },
+    // Days 81 to 85
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
-    // Days
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
-
+    // Days 86 to 90
     { name: "", pack: "", slot: "" },
 ];
 
