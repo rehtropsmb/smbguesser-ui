@@ -94,7 +94,7 @@ const stages = [
     { name: "Woodpecker", pack: "Invasion", slot: "3-7" },
     { name: "Rigidify", pack: "Gaiden", slot: "6-4" },
     { name: "Repellent", pack: "651", slot: "5-6" },
-    { name: "", pack: "", slot: "" },
+    { name: "Rerun", pack: "651", slot: "1-8" },
     // Days 81 to 85
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
