@@ -96,7 +96,7 @@ const stages = [
     { name: "Repellent", pack: "651", slot: "5-6" },
     { name: "Rerun", pack: "651", slot: "1-8" },
     // Days 81 to 85
-    { name: "", pack: "", slot: "" },
+    { name: "Rebound Slider", pack: "Stardust", slot: "4-10" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
