@@ -97,7 +97,7 @@ const stages = [
     { name: "Rerun", pack: "651", slot: "1-8" },
     // Days 81 to 85
     { name: "Rebound Slider", pack: "Stardust", slot: "4-10" },
-    { name: "", pack: "", slot: "" },
+    { name: "Squeeze", pack: "Launch!", slot: "5-2" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
