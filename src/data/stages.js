@@ -99,7 +99,7 @@ const stages = [
     { name: "Rebound Slider", pack: "Stardust", slot: "4-10" },
     { name: "Squeeze", pack: "Launch!", slot: "5-2" },
     { name: "Auto Doors", pack: "SMB2", slot: "Advanced Extra 1" },
-    { name: "", pack: "", slot: "" },
+    { name: "Whirlers", pack: "Gaiden", slot: "4-3" },
     { name: "", pack: "", slot: "" },
     // Days 86 to 90
     { name: "", pack: "", slot: "" },
