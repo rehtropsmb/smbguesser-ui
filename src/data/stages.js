@@ -100,9 +100,26 @@ const stages = [
     { name: "Squeeze", pack: "Launch!", slot: "5-2" },
     { name: "Auto Doors", pack: "SMB2", slot: "Advanced Extra 1" },
     { name: "Whirlers", pack: "Gaiden", slot: "4-3" },
-    { name: "", pack: "", slot: "" },
+    { name: "Scrolls", pack: "Deluxe", slot: "Advanced 15" },
     // Days 86 to 90
     { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days 91 to 95
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // Days 96 to 100
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    { name: "", pack: "", slot: "" },
+    // End Season 1
 ];
 
 export default stages;
