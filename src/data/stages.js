@@ -102,7 +102,7 @@ const stages = [
     { name: "Whirlers", pack: "Gaiden", slot: "4-3" },
     { name: "Scrolls", pack: "Deluxe", slot: "Advanced 15" },
     // Days 86 to 90
-    { name: "", pack: "", slot: "" },
+    { name: "Cone Flake", pack: "Stardust", slot: "2-8" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
