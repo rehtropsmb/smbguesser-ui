@@ -105,7 +105,7 @@ const stages = [
     { name: "Cone Flake", pack: "Stardust", slot: "2-8" },
     { name: "Personal Space", pack: "Invasion", slot: "4-10" },
     { name: "Combination", pack: "SMB2", slot: "6-1" },
-    { name: "", pack: "", slot: "" },
+    { name: "Scaffolding", pack: "Stardust", slot: "10-5" },
     { name: "", pack: "", slot: "" },
     // Days 91 to 95
     { name: "", pack: "", slot: "" },
