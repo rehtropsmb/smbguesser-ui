@@ -109,7 +109,7 @@ const stages = [
     { name: "Saw", pack: "651", slot: "3-4" },
     // Days 91 to 95
     { name: "Wreckage", pack: "Launch!", slot: "Master 2" },
-    { name: "", pack: "", slot: "" },
+    { name: "Gravity Jumper", pack: "651", slot: "7-3" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
     { name: "", pack: "", slot: "" },
