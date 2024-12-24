@@ -27,7 +27,7 @@ function Game({ puzzleNumber, stage }) {
         return parsed ?? null;
     });
 
-    const CURRENT_UPDATE = 2;
+    const CURRENT_UPDATE = 3;
     const [lastUpdate, setLastUpdate] = useState(() => {
         const saved = localStorage.getItem("lastUpdate");
         const parsed = JSON.parse(saved);
@@ -224,12 +224,14 @@ function Game({ puzzleNumber, stage }) {
             <TimeRemaining/>
 
             <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
-            {/* <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
-                October 7th, 2024: 
+            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+                December 24th, 2024:
             </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                Thanks to everyone who filled out the survey! The overwhelming majority of people wanted to see Deluxe and 651 stages, so puzzles from those packs will be coming soon!
-            </Typography> */}
+                This season of SMB Guesser will be finishing on day 100 (January 1st 2025).
+                Thanks to everyone who has played and enjoyed SMB Guesser!
+                A second season of guessers will hopefully be coming soon.
+            </Typography>
         </>
     );
 }

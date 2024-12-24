@@ -1,7 +1,6 @@
 import { Typography, Box } from '@mui/material';
 import Game from './app/Game';
 import stages from "./data/stages";
-import TimeRemaining from './app/TimeRemaining';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 const style = {
@@ -45,10 +44,10 @@ function App() {
                             SMB Guesser
                         </Typography>
                     </Box>
-                    <Typography variant="body1">No stage prepared for day #{puzzleNumber}.</Typography>
-                    <Typography variant="body1">Thanks so much for enjoying my game!</Typography>
+                    <Typography variant="body1">After 100 days, Season 1 of SMB Guesser has concluded.</Typography>
+                    <Typography variant="body1">Thanks to everyone who played and enjoyed my game!</Typography>
                     <Typography variant="body1">-rehtrop</Typography>
-                    <TimeRemaining/>
+                    {/* <TimeRemaining/> */}
                 </>
             )}
         </div>

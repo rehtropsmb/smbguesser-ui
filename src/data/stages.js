@@ -110,16 +110,17 @@ const stages = [
     // Days 91 to 95
     { name: "Wreckage", pack: "Launch!", slot: "Master 2" },
     { name: "Gravity Jumper", pack: "651", slot: "7-3" },
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
+    { name: "Scorpion", pack: "Invasion", slot: "6-5" },
+    { name: "Warp Dreams", pack: "Gaiden", slot: "5-10" },
+    { name: "Variable Width", pack: "SMB2", slot: "Master Extra 1" },
     // Days 96 to 100
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
-    { name: "", pack: "", slot: "" },
+    { name: "Veer Field", pack: "Deluxe", slot: "Beginner 36" },
+    { name: "Maelstrom", pack: "Gaiden", slot: "Master Extra 2" },
+    { name: "Wormhole", pack: "SMB2", slot: "Expert 1" },
+    { name: "Architect", pack: "651", slot: "6-10" },
+    { name: "Commingle Soiree", pack: "Launch!", slot: "9-6" },
     // End Season 1
+    { name: "", pack: "", slot: "" },
 ];
 
 export default stages;
