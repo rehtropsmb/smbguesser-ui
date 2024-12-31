@@ -52,6 +52,17 @@ function TopBar({ gameHistory }) {
         return streak;
     }, [gameHistory]);
 
+    const average = useMemo(() => {
+        if (won < 1) { return 0; }
+        const total = gameHistory.reduce((prev, curr) => {
+            if (curr.state === 'W') {
+                return prev + curr.score;
+            }
+            return prev;
+        }, 0)
+        return (total / won).toFixed(2);
+    }, [gameHistory, won]);
+
     const data = [
         gameHistory.filter(p => (p.state === 'W' && p.score === 1)).length,
         gameHistory.filter(p => (p.state === 'W' && p.score === 2)).length,
@@ -65,7 +76,7 @@ function TopBar({ gameHistory }) {
         <>
             <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
                 <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '8px', font: 'Gabarito' }}>
+                <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '8px', font: 'Gabarito', }}>
                     SMB Guesser
                 </Typography>
                 <IconButton onClick={() => setLeaderboardDialogOpen(true)} sx={{ marginLeft: '0px' }}>
@@ -80,7 +91,9 @@ function TopBar({ gameHistory }) {
             </Box>
             <InfoDialog open={infoDialogOpen} setOpen={setInfoDialogOpen}/>
             <Dialog open={leaderboardDialogOpen}>
-                <Typography variant="h5" sx={{ fontWeight: 'bold', margin: '20px 20px 0px' }}>SMB Guesser Stats</Typography>
+                <Box display="flex" justifyContent="center" alignItems="center">
+                    <Typography variant="h5" sx={{ fontWeight: 'bold', margin: '20px 20px 0px' }}>SMB Guesser Stats</Typography>
+                </Box>
                 <DialogContent sx={{ padding: '0px'}}>
                     <Box sx={{ display: 'flex', flexDirection: 'row', justifyItems: 'center', padding: '5px' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '10px' }}>
@@ -123,16 +136,23 @@ function TopBar({ gameHistory }) {
                                 Max Streak
                             </Typography>
                         </Box>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '10px' }}>
+                            <Typography variant="h5">
+                                { average }
+                            </Typography>
+                            <Typography variant="caption">
+                                Average
+                            </Typography>
+                        </Box>
                     </Box>
                     <BarChart
                         height={300}
                         colors={['#468966']}
                         slotProps={{ legend: { hidden: true }}}
                         series={[
-                        { data: data, label: 'uv', id: 'uvId' },
+                        { data: data, label: '# of days', id: 'uvId' },
                         ]}
                         xAxis={[{ label: 'Number of Guesses', data: xLabels, scaleType: 'band' }]}
-                        tooltip={{ trigger: 'none' }}
                         sx={{ margin: 'auto' }}
                     />
                 </DialogContent>
