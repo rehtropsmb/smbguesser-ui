@@ -1,7 +1,9 @@
-import { Typography, Box } from '@mui/material';
+import { Typography } from '@mui/material';
 import Game from './app/Game';
 import stages from "./data/stages";
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+// import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import TopBar from "./app/TopBar";
+import { useState, useMemo } from "react";
 
 const style = {
     textAlign: 'center',
@@ -33,17 +35,30 @@ function App() {
     const puzzleNumber = getPuzzleNumber();
     const stage = stages[puzzleNumber - 1] ?? { name: '', pack: '', slot: ''};
 
+    // stuff added to make stats still viewable
+    
+    const [gameHistory] = useState(() => {
+        const saved = localStorage.getItem("gameHistory");
+        const parsed = JSON.parse(saved);
+        return parsed ?? {};
+    });
+    
+    const gameHistoryArray = useMemo(() => {
+        return Object.values(gameHistory).sort((a, b) => (a.puzzle - b.puzzle));
+    }, [gameHistory]);
+
     return (
         <div style={style}>
             { stage.name && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
             { !stage.name && (
                 <>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
+                    {/* <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
                         <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
                         <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Gabarito', margin: '8px', font: 'Gabarito' }}>
                             SMB Guesser
                         </Typography>
-                    </Box>
+                    </Box> */}
+                    <TopBar gameHistory={gameHistoryArray}/>
                     <Typography variant="body1">After 100 days, Season 1 of SMB Guesser has concluded.</Typography>
                     <Typography variant="body1">Thanks to everyone who played and enjoyed my game!</Typography>
                     <Typography variant="body1">-rehtrop</Typography>
