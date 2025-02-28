@@ -13,13 +13,12 @@ function UpdateDialog({ open, setOpen, setUpdateDialogViewed }) {
             </DialogTitle>
             <DialogContent>
                 <Box sx={{ margin:'15px'}}>
-                    <Typography variant="body" sx={{ fontWeight: 'bold'}}>December 24th, 2024</Typography>
+                    <Typography variant="body" sx={{ fontWeight: 'bold'}}>February 28th, 2025</Typography>
                 </Box>
                 <Box sx={{ margin:'15px'}}>
                     <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                        This season of SMB Guesser will be finishing on day 100 (January 1st 2025).
-                        Thanks to everyone who has played and enjoyed SMB Guesser!
-                        A second season of guessers will hopefully be coming soon.
+                        Thanks to Nambo, 31 more days of guesser have been prepared to
+                        happen over the month of March! Season 2 will be starting March 1st.
                     </Typography>
                 </Box>
             </DialogContent>

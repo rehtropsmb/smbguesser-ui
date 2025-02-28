@@ -19,11 +19,11 @@ const style = {
 function App() {
     const getPuzzleNumber = () => {
         // use after falling back an hour
-        const startDate = new Date('2024-09-24T00:00:00-05:00'); // Midnight ET on 9/24/2024
+        // const startDate = new Date('2024-09-24T00:00:00-05:00'); // Midnight ET on 9/24/2024
         // use after springing forwards an hour
         // const startDate = new Date('2024-09-24T00:00:00-04:00'); // Midnight ET on 9/24/2024
         // also make sure to update TimeRemaining.js
-
+        const startDate = new Date('2024-11-21T00:00:00-05:00'); // Midnight ET on 9/24/2024
 
         const now = new Date();
         const diff = now - startDate;
@@ -38,7 +38,7 @@ function App() {
     // stuff added to make stats still viewable
     
     const [gameHistory] = useState(() => {
-        const saved = localStorage.getItem("gameHistory");
+        const saved = localStorage.getItem("gameHistory_2");
         const parsed = JSON.parse(saved);
         return parsed ?? {};
     });
@@ -49,8 +49,8 @@ function App() {
 
     return (
         <div style={style}>
-            { stage.name && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
-            { !stage.name && (
+            { stage.name && puzzleNumber > 100 && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
+            { (!stage.name || puzzleNumber <= 100) && (
                 <>
                     {/* <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
                         <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
@@ -59,8 +59,8 @@ function App() {
                         </Typography>
                     </Box> */}
                     <TopBar gameHistory={gameHistoryArray}/>
-                    <Typography variant="body1">After 100 days, Season 1 of SMB Guesser has concluded.</Typography>
-                    <Typography variant="body1">Thanks to everyone who played and enjoyed my game!</Typography>
+                    <Typography variant="body1">Season 2 of SMB Guesser is starting soon!</Typography>
+                    <Typography variant="body1">Thanks to Nambo for preparing stages for the month of March!</Typography>
                     <Typography variant="body1">-rehtrop</Typography>
                     {/* <TimeRemaining/> */}
                 </>

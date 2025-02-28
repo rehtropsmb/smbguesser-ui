@@ -120,7 +120,46 @@ const stages = [
     { name: "Architect", pack: "651", slot: "6-10" },
     { name: "Commingle Soiree", pack: "Launch!", slot: "9-6" },
     // End Season 1
-    { name: "", pack: "", slot: "" },
+
+    // Season 2 (images by Nambo)
+    // Days 1 to 5
+    { name: "Sega Logo", pack: "Deluxe", slot: "8-4" },
+    { name: "Totalitarianism", pack: "SMB2", slot: "2-9" },
+    { name: "Slicer", pack: "651", slot: "3-6" },
+    { name: "Wrecking Balls", pack: "Stardust", slot: "5-3" },
+    { name: "Triangle Walk", pack: "Invasion", slot: "6-6" },
+    // Days 6 to 10
+    { name: "The Grand Finale", pack: "Gaiden", slot: "Master Extra 10" },
+    { name: "Dismantled Pedestal", pack: "Invasion", slot: "2-4" },
+    { name: "Melting Pot", pack: "SMB2", slot: "5-3" },
+    { name: "Locksmith", pack: "Launch!", slot: "2-6" },
+    { name: "Toboggan", pack: "Launch!", slot: "8-8" },
+    // Days 11 to 15
+    { name: "Ladder", pack: "651", slot: "9-7" },
+    { name: "Unconventional Combo", pack: "Invasion", slot: "8-1" },
+    { name: "Valleys", pack: "651", slot: "7-2" },
+    { name: "Ringfield", pack: "Gaiden", slot: "3-7" },
+    { name: "Blur Bridge", pack: "Deluxe", slot: "Beginner Extra 1" },
+    // Days 16 to 20
+    { name: "Landing Gear", pack: "Gaiden", slot: "2-3" },
+    { name: "Tail", pack: "651", slot: "4-8" },
+    { name: "Klein Bottle", pack: "Stardust", slot: "1-9" },
+    { name: "Paraboloid", pack: "Deluxe", slot: "Advanced 60" },
+    { name: "Down Under", pack: "Stardust", slot: "6-4" },
+    // Days 21 to 25
+    { name: "Namb69", pack: "Launch!", slot: "Kaizo Extra 3" },
+    { name: "Ziplines", pack: "Stardust", slot: "10-7" },
+    { name: "Detour", pack: "SMB2", slot: "6-8" },
+    { name: "Bouncy Bubble Land", pack: "Stardust", slot: "Interstellar 1" },
+    { name: "Outrun", pack: "Invasion", slot: "6-3" },
+    // Days 26 to 31
+    { name: "Fun House", pack: "651", slot: "2-7" },
+    { name: "Slippery When Wet", pack: "Invasion", slot: "5-6" },
+    { name: "Unwind", pack: "Gaiden", slot: "2-9" },
+    { name: "Diamondback", pack: "Launch!", slot: "4-5" },
+    { name: "Eclipse", pack: "Launch!", slot: "Master 4" },
+    { name: "Slot Machine", pack: "Gaiden", slot: "6-10" },
+
 ];
 
 export default stages;

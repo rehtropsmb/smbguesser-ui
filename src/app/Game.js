@@ -16,7 +16,7 @@ function Game({ puzzleNumber, stage }) {
     const [guesses, setGuesses] = useState([]);
 
     const [gameHistory, setGameHistory] = useState(() => {
-        const saved = localStorage.getItem("gameHistory");
+        const saved = localStorage.getItem("gameHistory_2");
         const parsed = JSON.parse(saved);
         return parsed ?? {};
     });
@@ -27,7 +27,7 @@ function Game({ puzzleNumber, stage }) {
         return parsed ?? null;
     });
 
-    const CURRENT_UPDATE = 3;
+    const CURRENT_UPDATE = 4;
     const [lastUpdate, setLastUpdate] = useState(() => {
         const saved = localStorage.getItem("lastUpdate");
         const parsed = JSON.parse(saved);
@@ -135,7 +135,7 @@ function Game({ puzzleNumber, stage }) {
                     ...gameHistory
                 };
                 history[puzzleNumber] = result;
-                localStorage.setItem("gameHistory", JSON.stringify(history));
+                localStorage.setItem("gameHistory_2", JSON.stringify(history));
                 setGameHistory(history);
             } else if (currGuesses.length >= 5) {
                 // finish game
@@ -149,7 +149,7 @@ function Game({ puzzleNumber, stage }) {
                     ...gameHistory
                 };
                 history[puzzleNumber] = result;
-                localStorage.setItem("gameHistory", JSON.stringify(history));
+                localStorage.setItem("gameHistory_2", JSON.stringify(history));
                 setGameHistory(history);
             }
             return currGuesses;
@@ -214,7 +214,7 @@ function Game({ puzzleNumber, stage }) {
                 width={1500}
             />}
             <TopBar gameHistory={gameHistoryArray}/>
-            <Typography>Stage #{puzzleNumber}</Typography>
+            <Typography>Stage #{puzzleNumber - 100}</Typography>
             <ImageDisplay currentGuess={guesses.length + 1} gameState={gameState} handleSkip={() => addGuess()} puzzle={puzzleNumber}/>
             { gameState === "PLAYING" && input }
             <Results gameState={gameState} getCopyText={getCopyText} stage={stage} score={guesses.length}/>
@@ -225,12 +225,11 @@ function Game({ puzzleNumber, stage }) {
 
             <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
             <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
-                December 24th, 2024:
+                February 28th, 2025
             </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                This season of SMB Guesser will be finishing on day 100 (January 1st 2025).
-                Thanks to everyone who has played and enjoyed SMB Guesser!
-                A second season of guessers will hopefully be coming soon.
+                Thanks to Nambo, 31 more days of guesser have been prepared to
+                happen over the month of March! Season 2 will be starting March 1st.
             </Typography>
         </>
     );
