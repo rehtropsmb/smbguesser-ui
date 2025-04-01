@@ -160,6 +160,9 @@ const stages = [
     { name: "Eclipse", pack: "Launch!", slot: "Master 4" },
     { name: "Slot Machine", pack: "Gaiden", slot: "6-10" },
 
+    // Season 3 (juegar time)
+    // Days 1 to 5
+    { name: "Lunch with Matthew", pack: "Juegar", slot: "Advanced 29" },
 ];
 
 export default stages;
@@ -170,3 +173,6 @@ export default stages;
 // Gaiden
 // 651
 // Invasion
+
+
+// Juegar ?

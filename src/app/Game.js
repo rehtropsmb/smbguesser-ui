@@ -16,7 +16,7 @@ function Game({ puzzleNumber, stage }) {
     const [guesses, setGuesses] = useState([]);
 
     const [gameHistory, setGameHistory] = useState(() => {
-        const saved = localStorage.getItem("gameHistory_2");
+        const saved = localStorage.getItem("gameHistory_3");
         const parsed = JSON.parse(saved);
         return parsed ?? {};
     });
@@ -135,7 +135,7 @@ function Game({ puzzleNumber, stage }) {
                     ...gameHistory
                 };
                 history[puzzleNumber] = result;
-                localStorage.setItem("gameHistory_2", JSON.stringify(history));
+                localStorage.setItem("gameHistory_3", JSON.stringify(history));
                 setGameHistory(history);
             } else if (currGuesses.length >= 5) {
                 // finish game
@@ -149,7 +149,7 @@ function Game({ puzzleNumber, stage }) {
                     ...gameHistory
                 };
                 history[puzzleNumber] = result;
-                localStorage.setItem("gameHistory_2", JSON.stringify(history));
+                localStorage.setItem("gameHistory_3", JSON.stringify(history));
                 setGameHistory(history);
             }
             return currGuesses;
@@ -224,13 +224,20 @@ function Game({ puzzleNumber, stage }) {
             <TimeRemaining/>
 
             <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
-            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+            {/* <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
                 February 28th, 2025
             </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
                 Thanks to Nambo, 31 more days of guesser have been prepared to
                 happen over the month of March! Season 2 will be starting March 1st.
+            </Typography> */}
+            
+            {/* <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+                April 1st, 2025
             </Typography>
+            <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
+                Super Juegar Monkey
+            </Typography> */}
         </>
     );
 }

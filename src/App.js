@@ -38,7 +38,7 @@ function App() {
     // stuff added to make stats still viewable
     
     const [gameHistory] = useState(() => {
-        const saved = localStorage.getItem("gameHistory_2");
+        const saved = localStorage.getItem("gameHistory_3");
         const parsed = JSON.parse(saved);
         return parsed ?? {};
     });
@@ -49,8 +49,8 @@ function App() {
 
     return (
         <div style={style}>
-            { stage.name && puzzleNumber > 100 && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
-            { (!stage.name || puzzleNumber <= 100) && (
+            { stage.name && (<Game puzzleNumber={puzzleNumber} stage={stage}/>)}
+            { (!stage.name) && (
                 <>
                     {/* <Box sx={{ display: 'flex', flexDirection: 'row', verticalAlign: 'middle', margin: '15px' }}>
                         <TravelExploreIcon sx={{ transform: 'scale(2.0)', margin: '15px 6px 0px' }}/>
@@ -59,8 +59,7 @@ function App() {
                         </Typography>
                     </Box> */}
                     <TopBar gameHistory={gameHistoryArray}/>
-                    <Typography variant="body1">Season 2 of SMB Guesser is starting soon!</Typography>
-                    <Typography variant="body1">Thanks to Nambo for preparing stages for the month of March!</Typography>
+                    <Typography variant="body1">No stage prepared for today :c</Typography>
                     <Typography variant="body1">-rehtrop</Typography>
                     {/* <TimeRemaining/> */}
                 </>

@@ -1154,6 +1154,10 @@ const _651 = [
     `Lucky WR`,
 ]
 
+const juegar = [
+    'Lunch with Matthew'
+];
+
 const combined = []
     .concat(smb2)
     .concat(gaiden)
@@ -1161,7 +1165,8 @@ const combined = []
     .concat(launch)
     .concat(invasion)
     .concat(deluxe)
-    .concat(_651);
+    .concat(_651)
+    .concat(juegar);
 
 const stagenames = [...new Set(combined)];
 
