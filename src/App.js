@@ -23,7 +23,7 @@ function App() {
         // use after springing forwards an hour
         // const startDate = new Date('2024-09-24T00:00:00-04:00'); // Midnight ET on 9/24/2024
         // also make sure to update TimeRemaining.js
-        const startDate = new Date('2024-11-21T00:00:00-05:00'); // Midnight ET on 9/24/2024
+        const startDate = new Date('2024-11-21T00:00:00-04:00'); // Midnight ET on 9/24/2024
 
         const now = new Date();
         const diff = now - startDate;
