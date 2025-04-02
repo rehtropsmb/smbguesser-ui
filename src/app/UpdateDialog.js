@@ -7,7 +7,7 @@ function UpdateDialog({ open, setOpen, setUpdateDialogViewed }) {
     };
 
     return (
-        <Dialog open={open}>
+        <Dialog open={false}>
             <DialogTitle>
                 <Typography variant="h5" sx={{ fontWeight: 'bold'}}>SMB Guesser Update</Typography>
             </DialogTitle>

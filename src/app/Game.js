@@ -223,7 +223,7 @@ function Game({ puzzleNumber, stage }) {
             </Box>
             <TimeRemaining/>
 
-            {/* <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/> */}
+            <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
             
             <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
                 April 1st, 2025
