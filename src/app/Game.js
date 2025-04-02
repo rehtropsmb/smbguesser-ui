@@ -223,21 +223,15 @@ function Game({ puzzleNumber, stage }) {
             </Box>
             <TimeRemaining/>
 
-            <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
-            {/* <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
-                February 28th, 2025
-            </Typography>
-            <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                Thanks to Nambo, 31 more days of guesser have been prepared to
-                happen over the month of March! Season 2 will be starting March 1st.
-            </Typography> */}
+            {/* <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/> */}
             
-            {/* <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
+            <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
                 April 1st, 2025
             </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                Super Juegar Monkey
-            </Typography> */}
+                April fools! Nambo's month of stages is over, but I (rehtrop) have a couple extra Juegar stages lined up for an April Fools season.
+                If you haven't played the pack in a while, open it up and give it a shot!
+            </Typography>
         </>
     );
 }

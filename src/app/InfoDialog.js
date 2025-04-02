@@ -26,7 +26,7 @@ function InfoDialog({ open, setOpen }) {
                     {` in total. Once all guesses have been used,
                     the stage will be revealed. Stages will be a mix of both `}
                     <Typography variant="body" sx={{ fontWeight: 'bold'}}>custom and vanilla stages from Super Monkey Ball 2</Typography>
-                    {`. Currently stages from SMB2, Gaiden, Launch, Invasion, Stardust, 651, and Deluxe are available to be selected (but more packs will come later!)`}
+                    {`. Currently stages from SMB2, Gaiden, Launch, Invasion, Stardust, 651, Deluxe, and Juegar are available to be selected (but more packs will come later!)`}
                 </Box>
                 <Box sx={{ margin:'15px'}}>
                     {`The next day's puzzle begins at 4:00 UTC (midnight EDT). Good luck!`}

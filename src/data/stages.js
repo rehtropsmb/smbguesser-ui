@@ -163,6 +163,7 @@ const stages = [
     // Season 3 (juegar time)
     // Days 1 to 5
     { name: "Lunch with Matthew", pack: "Juegar", slot: "Advanced 29" },
+    { name: "The Hanging Man Paradox", pack: "Juegar", slot: "Beginner 10" },
 ];
 
 export default stages;
