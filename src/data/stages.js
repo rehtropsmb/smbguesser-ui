@@ -164,6 +164,7 @@ const stages = [
     // Days 1 to 5
     { name: "Lunch with Matthew", pack: "Juegar", slot: "Advanced 29" },
     { name: "The Hanging Man Paradox", pack: "Juegar", slot: "Beginner 10" },
+    { name: "Florida West Beach", pack: "Juegar", slot: "Beginner Extra 6" },
 ];
 
 export default stages;
