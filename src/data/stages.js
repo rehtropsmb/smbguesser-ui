@@ -169,6 +169,7 @@ const stages = [
     { name: "Monky Suicie", pack: "Juegar", slot: "Advanced 2" },
     // Days 6 to 10
     { name: "Kim Deal", pack: "Juegar", slot: "Advanced Extra 1" },
+    { name: "Steed Dirkly", pack: "Juegar", slot: "Advanced 28" },
 ];
 
 export default stages;
