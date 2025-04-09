@@ -171,6 +171,7 @@ const stages = [
     { name: "Kim Deal", pack: "Juegar", slot: "Advanced Extra 1" },
     { name: "Steed Dirkly", pack: "Juegar", slot: "Advanced 28" },
     { name: "Goofy", pack: "Juegar", slot: "Advanced 1" },
+    { name: "Post Your Stream Key", pack: "Juegar", slot: "Advanced 7" },
 ];
 
 export default stages;
