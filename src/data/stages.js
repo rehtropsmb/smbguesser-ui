@@ -173,6 +173,8 @@ const stages = [
     { name: "Goofy", pack: "Juegar", slot: "Advanced 1" },
     { name: "Post Your Stream Key", pack: "Juegar", slot: "Advanced 7" },
     { name: "No Brown Allowed Past This Point", pack: "Juegar", slot: "Beginner Extra 1" },
+    // Days 11 to 15
+    { name: "Mouse For Sale", pack: "Juegar", slot: "Advanced 15" },
 ];
 
 export default stages;
