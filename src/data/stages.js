@@ -176,6 +176,7 @@ const stages = [
     // Days 11 to 15
     { name: "Mouse For Sale", pack: "Juegar", slot: "Advanced 15" },
     { name: "Dr. Professor", pack: "Juegar", slot: "Advanced 30" },
+    { name: "Splurge", pack: "Juegar", slot: "Beginner 8" },
 ];
 
 export default stages;
