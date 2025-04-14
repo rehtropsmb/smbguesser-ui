@@ -177,6 +177,7 @@ const stages = [
     { name: "Mouse For Sale", pack: "Juegar", slot: "Advanced 15" },
     { name: "Dr. Professor", pack: "Juegar", slot: "Advanced 30" },
     { name: "Splurge", pack: "Juegar", slot: "Beginner 8" },
+    { name: "Divine Intervention", pack: "Juegar", slot: "Beginner Extra 3" },
 ];
 
 export default stages;
