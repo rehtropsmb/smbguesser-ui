@@ -178,6 +178,7 @@ const stages = [
     { name: "Dr. Professor", pack: "Juegar", slot: "Advanced 30" },
     { name: "Splurge", pack: "Juegar", slot: "Beginner 8" },
     { name: "Divine Intervention", pack: "Juegar", slot: "Beginner Extra 3" },
+    { name: "Mark Kiessling", pack: "Juegar", slot: "Advanced Extra 5" },
 ];
 
 export default stages;
