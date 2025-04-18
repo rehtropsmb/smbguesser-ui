@@ -181,6 +181,7 @@ const stages = [
     { name: "Mark Kiessling", pack: "Juegar", slot: "Advanced Extra 5" },
     { name: "Other Arm", pack: "Juegar", slot: "Beginner 7" },
     { name: "The Cogs", pack: "Juegar", slot: "Advanced 8" },
+    { name: "Imminent Brown", pack: "Juegar", slot: "Beginner 1" },
 ];
 
 export default stages;
