@@ -183,6 +183,11 @@ const stages = [
     { name: "The Cogs", pack: "Juegar", slot: "Advanced 8" },
     { name: "Imminent Brown", pack: "Juegar", slot: "Beginner 1" },
     { name: "Brown", pack: "Juegar", slot: "Beginner 2" },
+    // more
+    { name: "Hairy Ball Theorem", pack: "Juegar", slot: "Advanced 27" },
+    { name: "Breakfast With Matthew", pack: "Juegar", slot: "Beginner Extra 8" },
+    { name: "Knargack", pack: "Juegar", slot: "Advanced 25" },
+    { name: "GG", pack: "Juegar", slot: "Beginner Extra 10" },
 ];
 
 export default stages;
