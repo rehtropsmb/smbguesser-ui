@@ -194,6 +194,7 @@ const stages = [
     { name: "Crazy Dave", pack: "Juegar", slot: "Advanced Extra 6" },
     { name: "Long Skin", pack: "Juegar", slot: "Beginner Extra 2" },
     { name: "Blastlord", pack: "Juegar", slot: "Beginner Extra 5" },
+    { name: "Cracka", pack: "Juegar", slot: "Advanced 20" },
 ];
 
 export default stages;
