@@ -2,8 +2,8 @@ import { Typography } from '@mui/material';
 import Game from './app/Game';
 import stages from "./data/stages";
 // import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import TopBar from "./app/TopBar";
-import { useState, useMemo } from "react";
+// import TopBar from "./app/TopBar";
+// import { useState, useMemo } from "react";
 
 const style = {
     textAlign: 'center',
@@ -37,15 +37,15 @@ function App() {
 
     // stuff added to make stats still viewable
     
-    const [gameHistory] = useState(() => {
-        const saved = localStorage.getItem("gameHistory_3");
-        const parsed = JSON.parse(saved);
-        return parsed ?? {};
-    });
+    // const [gameHistory] = useState(() => {
+    //     const saved = localStorage.getItem("gameHistory_3");
+    //     const parsed = JSON.parse(saved);
+    //     return parsed ?? {};
+    // });
     
-    const gameHistoryArray = useMemo(() => {
-        return Object.values(gameHistory).sort((a, b) => (a.puzzle - b.puzzle));
-    }, [gameHistory]);
+    // const gameHistoryArray = useMemo(() => {
+    //     return Object.values(gameHistory).sort((a, b) => (a.puzzle - b.puzzle));
+    // }, [gameHistory]);
 
     return (
         <div style={style}>
@@ -58,7 +58,7 @@ function App() {
                             SMB Guesser
                         </Typography>
                     </Box> */}
-                    <TopBar gameHistory={gameHistoryArray}/>
+                    {/* <TopBar gameHistory={gameHistoryArray}/> */}
                     <Typography variant="body1">No stage prepared for today :c</Typography>
                     <Typography variant="body1">-rehtrop</Typography>
                     {/* <TimeRemaining/> */}

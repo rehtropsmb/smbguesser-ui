@@ -16,7 +16,12 @@ function Game({ puzzleNumber, stage }) {
     const [guesses, setGuesses] = useState([]);
 
     const [gameHistory, setGameHistory] = useState(() => {
-        const saved = localStorage.getItem("gameHistory_3");
+        let saved;
+        if (puzzleNumber < 162) {
+            saved = localStorage.getItem("gameHistory_3");
+        } else {
+            saved = localStorage.getItem("gameHistory_4");
+        }
         const parsed = JSON.parse(saved);
         return parsed ?? {};
     });
@@ -135,7 +140,11 @@ function Game({ puzzleNumber, stage }) {
                     ...gameHistory
                 };
                 history[puzzleNumber] = result;
-                localStorage.setItem("gameHistory_3", JSON.stringify(history));
+                if (puzzleNumber < 162) {
+                    localStorage.setItem("gameHistory_3", JSON.stringify(history));
+                } else {
+                    localStorage.setItem("gameHistory_4", JSON.stringify(history));
+                }
                 setGameHistory(history);
             } else if (currGuesses.length >= 5) {
                 // finish game
@@ -149,7 +158,11 @@ function Game({ puzzleNumber, stage }) {
                     ...gameHistory
                 };
                 history[puzzleNumber] = result;
-                localStorage.setItem("gameHistory_3", JSON.stringify(history));
+                if (puzzleNumber < 162) {
+                    localStorage.setItem("gameHistory_3", JSON.stringify(history));
+                } else {
+                    localStorage.setItem("gameHistory_4", JSON.stringify(history));
+                }
                 setGameHistory(history);
             }
             return currGuesses;
