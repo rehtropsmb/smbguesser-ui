@@ -239,11 +239,12 @@ function Game({ puzzleNumber, stage }) {
             <UpdateDialog open={updateDialogOpen} setOpen={setUpdateDialogOpen} setUpdateDialogViewed={setUpdateDialogViewed}/>
             
             <Typography variant="body2" sx={{ maxWidth: '500px', fontWeight: 'bold' }}>
-                April 1st, 2025
+                May 1st, 2025
             </Typography>
             <Typography variant="body1" sx={{ maxWidth: '500px', marginBottom: '15px' }}>
-                April fools! Nambo's month of stages is over, but I (rehtrop) have a couple extra Juegar stages lined up for an April Fools season.
-                If you haven't played the pack in a while, open it up and give it a shot!
+                Season 4 has begun, thanks to TAR for preparing sets of images for 100 stages!
+                I hope you enjoy more guessers for the whole summer!
+                - rehtrop
             </Typography>
         </>
     );
